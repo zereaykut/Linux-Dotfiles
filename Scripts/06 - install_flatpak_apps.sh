@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # ========================================================== >> Apps
 flatpak install -y --noninteractive flathub com.github.tchx84.Flatseal       # manage flatpak permissions
 flatpak install -y --noninteractive flathub io.github.flattool.Warehouse     # manage flatpak apps

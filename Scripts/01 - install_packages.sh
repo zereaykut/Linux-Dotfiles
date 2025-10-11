@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # ========================================================== >> Base Packages
 sudo pacman --needed --noconfirm -S git
 sudo pacman --needed --noconfirm -S base-devel

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # ========================================================== >> Enable Systemctl
 sudo systemctl enable sddm                                     # login manager
 sudo systemctl enable bluetooth                                # bluetooth

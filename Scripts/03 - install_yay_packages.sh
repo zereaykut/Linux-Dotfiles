@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # ========================================================== >> AUR
 yay --needed --noconfirm -S swayosd-git        # OSD server
 yay --needed --noconfirm -S hyprshot           # screenshot

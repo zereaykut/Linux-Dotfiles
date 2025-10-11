@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 mkdir -p ~/.themes ~/.icons
 sudo mkdir -p /usr/share/themes /usr/share/icons
 

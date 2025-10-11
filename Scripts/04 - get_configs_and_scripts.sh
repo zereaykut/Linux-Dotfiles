@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # ========================================================== >> Create Folders
 mkdir -p ~/.config
 mkdir -p ~/.local/share/{bin,waybar,themes}
