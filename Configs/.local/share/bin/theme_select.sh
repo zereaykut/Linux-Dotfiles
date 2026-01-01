@@ -1,6 +1,6 @@
 #!/bin/env bash
 
-themes_path="$HOME/.config/hyprdots/themes/"
+themes_path="$HOME/.config/waydots/themes/"
 rofi_conf="$HOME/.config/rofi/theme_select.rasi"
 
 mapfile -d '' PICS < <(find "$themes_path" -maxdepth 2 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" \) -print0)

@@ -2,7 +2,7 @@
 
 # Input file (could be any image file path)
 wall_path="$1"
-cache_path="$HOME/.cache/hyprdots/themes"
+cache_path="$HOME/.cache/waydots/themes"
 
 mkdir -p $cache_path
 

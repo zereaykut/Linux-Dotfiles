@@ -1,5 +1,5 @@
 #!/bin/env bash
-cache_path="$HOME/.cache/hyprdots"
+cache_path="$HOME/.cache/waydots"
 wall_select="${1}"
 
 swww img "$wall_select" --transition-type center --transition-fps 60 --transition-duration 3

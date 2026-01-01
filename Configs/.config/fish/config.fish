@@ -1,8 +1,14 @@
 set fish_greeting ""
 
+# Variables
+set -gx SOURCE_PATH "$HOME/.local/share/bin"
+
+# Add to PATH
+fish_add_path $SOURCE_PATH
+
 # 
 alias cc='clear'
-alias hl='helix'
+# alias hl='helix'
 alias nv='nvim'
 
 # Eza
@@ -60,7 +66,7 @@ if status is-interactive
     zoxide init fish | source
 
     # Startup termşnal with a gif
-    kitty +kitten icat $HOME/.config/kitty/gifs/pochita.gif
+    random_kitty_gif.sh
     
     # Starship
     starship init fish | source

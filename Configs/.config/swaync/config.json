@@ -102,7 +102,7 @@
         },
         {
           "label":"",
-          "command": "swaync-client -t -sw && logout_launch.sh 2 dark"
+          "command": "swaync-client -t -sw && launch_logout.sh 2 dark"
         }
       ]
     }

@@ -1,12 +1,15 @@
 #!/bin/env bash
 
+SOURCE_PATH="$HOME/.local/share/bin"
+
 # theme="${'Catppuccin Mocha':-$1}"
-theme="${1}"
-theme_path="$HOME/.config/hyprdots/themes/$theme/"
 # wall_select="${"$theme_path/Catppuccin Mocha.png":-$2}"
+
+theme="${1}"
+theme_path="$HOME/.config/waydots/themes/$theme/"
 wall_select="${2}"
-config_path="$HOME/.config/hyprdots/configs/"
-cache_path="$HOME/.cache/hyprdots"
+config_path="$HOME/.config/waydots/configs/"
+cache_path="$HOME/.cache/waydots"
 
 source $theme_path/variables.sh
 
@@ -23,10 +26,21 @@ gsettings set org.gnome.desktop.interface icon-theme "$ICON_THEME"
 gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME"
 gsettings set org.gnome.desktop.interface color-scheme "$COLOR_SCHEME"
 
-# hyprland
-cp -f $theme_path/hypr.theme $HOME/.config/hypr/hyprland/theme.conf
-hyprctl setcursor $CURSOR_THEME $CURSOR_SIZE
-hyprctl reload 
+# window manager
+SESSION="${XDG_CURRENT_DESKTOP,,}${DESKTOP_SESSION,,}"
+if [[ "$SESSION" == *"hyprland"* ]]; then
+    echo "Detected Hyprland session"
+    cp -f $theme_path/hypr.theme $HOME/.config/hypr/hyprland/theme.conf
+    hyprctl setcursor $CURSOR_THEME $CURSOR_SIZE
+    hyprctl reload 
+elif [[ "$SESSION" == *"niri"* ]]; then
+    echo "Detected Niri session"
+    cp -f $theme_path/niri.theme $HOME/.config/niri/modules/theme.kdl
+    $SOURCE_PATH/generate_niri_config.sh
+    niri msg reload-config
+else
+    echo "Unknown session ('${SESSION}')"
+fi
 
 # hyprlock
 cp -f $theme_path/hyprlock.theme $HOME/.config/hypr/hyprlock/theme.conf
@@ -48,8 +62,7 @@ sed "s/{CURSOR_THEME}/$CURSOR_THEME/; s/{ICON_THEME}/$ICON_THEME/; s/{GTK_THEME}
 
 # waybar
 cp -f $theme_path/waybar.theme $HOME/.config/waybar/theme.css
-pgrep waybar && killall waybar 
-waybar &
+$SOURCE_PATH/launch_top_bar.sh
 
 # kvantum
 cp -f $theme_path/kvantum/kvantum.theme $HOME/.config/Kvantum/kv_theme/kv_theme.svg
@@ -70,13 +83,11 @@ cp -f $theme_path/wlogout.theme $HOME/.config/wlogout/theme.css
 
 # swaync
 cp -f $theme_path/swaync.theme $HOME/.config/swaync/theme.css
-pgrep swaync && killall swaync 
-swaync &
+$SOURCE_PATH/launch_notification_daemon.sh
 
 # swayosd
 cp -f $theme_path/swayosd.theme $HOME/.config/swayosd/theme.css
-pgrep swayosd-server && killall swayosd-server
-swayosd-server &
+$SOURCE_PATH/launch_osd.sh
 
 # hyprlock
 # cp -f $wall_select $HOME/.cache/themes/lock_screen.png

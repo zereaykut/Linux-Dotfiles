@@ -1,0 +1,17 @@
+{
+    "mpris": {
+    "format": "{player_icon}",
+    "format-paused": "{status_icon}",
+    "player-icons": {
+        "default": "▶",
+        "vlc": "󰕼"
+    },
+    "status-icons": {
+        "paused": "⏸"
+    },
+    "tooltip-format": "{player} ({status}) {dynamic}",
+    "on-click": "play-pause",
+    "on-middle-click": "previous track",
+    "on-right-click": "next track"
+  },
+}

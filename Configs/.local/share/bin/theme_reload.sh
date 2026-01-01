@@ -1,8 +1,8 @@
 #!/bin/env bash
 
-cache_path="$HOME/.cache/hyprdots"
+CACHE_PATH="$HOME/.cache/waydots"
 
-source $cache_path/theme.sh
-source $cache_path/wall_select.sh
+source $CACHE_PATH/theme.sh
+source $CACHE_PATH/wall_select.sh
 
 theme_switcher.sh "$theme" "$wall_select"

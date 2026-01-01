@@ -1,9 +1,9 @@
 #!/bin/env bash
-sddm_path="/usr/share/sddm/"
-sddm_hyprdots="$sddm_path/themes/SDDM-hyprdots/"
+SDDM_PATH="/usr/share/sddm/"
+sddm_waydots="$SDDM_PATH/themes/SDDM-waydots/"
 rofi_conf="$HOME/.config/rofi/theme_select.rasi"
 
-mapfile -d '' PICS < <(find "$sddm_hyprdots/themes" -maxdepth 2 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" \) -print0)
+mapfile -d '' PICS < <(find "$sddm_waydots/themes" -maxdepth 2 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" \) -print0)
 
 # Rofi command
 rofi_command="rofi -i -show -dmenu -config $rofi_conf"
@@ -55,7 +55,7 @@ main() {
     # Check if a wallpaper was selected
     if [ -n "$choice" ]; then
         # Change SDDM theme config
-        pkexec cp -f "$sddm_hyprdots/themes/$choice/theme.conf" "$sddm_hyprdots/theme.conf"
+        pkexec cp -f "$sddm_waydots/themes/$choice/theme.conf" "$sddm_waydots/theme.conf"
     else
         echo "No SDDM theme selected."
         exit 1

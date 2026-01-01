@@ -1,0 +1,35 @@
+{
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "  {volume}%",
+        "format-bluetooth-muted": "婢 ",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "swayosd-client --output-volume mute-toggle ",
+        "on-click-right": "pavucontrol -t 3",
+        "on-scroll-up": "swayosd-client --output-volume 5",
+        "on-scroll-down": "swayosd-client --output-volume -5",
+        "tooltip-format": "{icon} {desc} // {volume}%",
+        //"scroll-step": 5
+    },
+    
+    "pulseaudio#microphone": {
+      "format": "{format_source} {source_volume}%",
+      "format-source": "",
+      "format-source-muted": "",
+      "on-click-right": "pavucontrol -t 4",
+      "on-click": "swayosd-client --input-volume mute-toggle",
+      "on-scroll-up": "swayosd-client --input-volume 5",
+      "on-scroll-down": "swayosd-client --input-volume -5",
+      "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
+      //"scroll-step": 5
+    },
+}

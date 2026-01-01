@@ -5,19 +5,7 @@
 # selected script. If no scripts are found, it exits with an error message.
 
 # List all executable bash scripts in the target directory, show only the filenames
-# scripts=$(find ~/.local/share/bin -maxdepth 1 -type f -executable -name "*.sh" | sort | xargs -n 1 basename)
-scripts="clip_manager.sh
-close_all_windows.sh
-color_picker.sh
-launcher.sh
-logout_launch.sh
-netbird.sh
-reset_xdg_portal.sh
-theme_reload.sh
-theme_select.sh
-theme_select_sddm.sh
-wall_select.sh
-web_search.sh"
+scripts=$(find ~/.local/share/bin -maxdepth 1 -type f -executable | sort | xargs -n 1 basename)
 
 # If there are no scripts, exit
 if [ -z "$scripts" ]; then

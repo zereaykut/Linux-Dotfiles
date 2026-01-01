@@ -1,10 +1,10 @@
 #!/bin/env bash
 
 # Define your wallpapers directory
-source $HOME/.cache/hyprdots/theme.sh
-wall_path="$HOME/.config/hyprdots/themes/$theme/wallpapers/"
+source $HOME/.cache/waydots/theme.sh
+wall_path="$HOME/.config/waydots/themes/$theme/wallpapers/"
 rofi_conf="$HOME/.config/rofi/wallpaper_select.rasi"
-cache_path="/$HOME/.cache/hyprdots/$theme/"
+cache_path="/$HOME/.cache/waydots/$theme/"
 mkdir -p $cache_path
 
 # Retrieve image files using null delimiter to handle spaces in filenames
