@@ -19,8 +19,7 @@
     "~/.config/waybar/modules/bluetooth.jsonc",
     "~/.config/waybar/modules/battery.jsonc",
     "~/.config/waybar/modules/wlr_taskbar.jsonc",
-    "~/.config/waybar/modules/idle_inhibitor.jsonc",
-    "~/.config/waybar/modules/privacy.jsonc",
+    "~/.config/waybar/modules/custom_idle_manager.jsonc",
     "~/.config/waybar/modules/keyboard_state.jsonc",
     "~/.config/waybar/modules/temperature.jsonc",
     "~/.config/waybar/modules/disk.jsonc",
@@ -32,7 +31,7 @@
   ],
 
   "modules-left": ["cpu", "memory", "temperature", "disk", "backlight", "pulseaudio", "pulseaudio#microphone"],
-  "modules-center": ["niri/workspaces", "wlr/taskbar", "clock", "idle_inhibitor", "privacy", "keyboard-state"],
+  "modules-center": ["niri/workspaces", "wlr/taskbar", "clock", "custom/idle-manager", "keyboard-state"],
   "modules-right": ["battery", "network", "tray", "custom/system-updates", "custom/power-profiles-daemon", "custom/notification", "group/power_menu"],
 
 }

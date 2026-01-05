@@ -135,6 +135,7 @@ tooltip {
 #custom-logout,
 #cpu,
 #idle_inhibitor,
+#custom-idle-manager,
 #backlight {
   padding: 0px 15px 0px 15px;
   color: @text;;
