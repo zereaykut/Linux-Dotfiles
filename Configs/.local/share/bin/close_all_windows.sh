@@ -37,11 +37,11 @@ SESSION="${XDG_CURRENT_DESKTOP,,}${DESKTOP_SESSION,,}"
 
 # Fallback: query running processes if the variable is empty
 if [[ -z "$SESSION" ]]; then
-    if pgrep -x hyprland >/dev/null; then
-        SESSION="hyprland"
-    elif pgrep -x niri >/dev/null; then
-        SESSION="niri"
-    fi
+	if pgrep -x hyprland >/dev/null; then
+		SESSION="hyprland"
+	elif pgrep -x niri >/dev/null; then
+		SESSION="niri"
+	fi
 fi
 
 echo "Detected SESSION: $SESSION"
@@ -50,42 +50,40 @@ echo "Detected SESSION: $SESSION"
 # Hyprland
 ###########################################
 if [[ "$SESSION" == *"hyprland"* ]]; then
-    echo "Closing all windows in Hyprland..."
+	echo "Closing all windows in Hyprland..."
 
-    # hyprctl clients -j | jq -r '.[].address' | while read -r addr; do
-    #     hyprctl dispatch closewindow "$addr"
-    # done
+	# hyprctl clients -j | jq -r '.[].address' | while read -r addr; do
+	#     hyprctl dispatch closewindow "$addr"
+	# done
 
-    hyprctl clients -j | \
-        jq -r ".[].address" | \
-        xargs -I{} hyprctl dispatch closewindow address:{}
+	hyprctl clients -j |
+		jq -r ".[].address" |
+		xargs -I{} hyprctl dispatch closewindow address:{}
 
-    # Move to first workspace
-    hyprctl dispatch workspace 1
+	# Move to first workspace
+	hyprctl dispatch workspace 1
 
-    exit 0
+	exit 0
 fi
-
 
 ###########################################
 # Niri
 ###########################################
 if [[ "$SESSION" == *"niri"* ]]; then
-    echo "Closing all windows in Niri..."
+	echo "Closing all windows in Niri..."
 
-    niri msg -j windows | jq -r '.[].id' | while read -r wid; do
-        niri msg action close-window --id "$wid"
-    done
+	niri msg -j windows | jq -r '.[].id' | while read -r wid; do
+		niri msg action close-window --id "$wid"
+	done
 
-    # niri msg -j windows | \
-    #     jq -r '.[].node_id' | \
-    #     xargs -I{} niri msg action close-window --id {}
+	# niri msg -j windows | \
+	#     jq -r '.[].node_id' | \
+	#     xargs -I{} niri msg action close-window --id {}
 
-    niri msg action focus-workspace 1
+	niri msg action focus-workspace 1
 
-    exit 0
+	exit 0
 fi
-
 
 echo "Unsupported or unknown SESSION. (Supported: Hyprland, Niri)"
 exit 1

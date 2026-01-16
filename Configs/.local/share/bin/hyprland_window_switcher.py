@@ -40,7 +40,7 @@ class HyprlandClient:
             address = window.get("address")
 
             entry = f"ws {workspace:^2} | {window_class:<20} <> {window_title:<45}   || {address:^10}"
-            
+
             if not rofi_output:
                 rofi_output = entry
             else:

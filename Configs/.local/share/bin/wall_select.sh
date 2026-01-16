@@ -4,7 +4,7 @@
 source $HOME/.cache/waydots/theme.sh
 wall_path="$HOME/.config/waydots/themes/$theme/wallpapers/"
 rofi_conf="$HOME/.config/rofi/wallpaper_select.rasi"
-cache_path="/$HOME/.cache/waydots/$theme/"
+cache_path="/$HOME/.cache/waydots/wallpaper_previews/$theme/"
 mkdir -p $cache_path
 
 # Retrieve image files using null delimiter to handle spaces in filenames

@@ -73,7 +73,7 @@ sed "s/{ICON_THEME}/$ICON_THEME/" $config_path/qt5ct.theme > $HOME/.config/qt5ct
 sed "s/{ICON_THEME}/$ICON_THEME/" $config_path/qt6ct.theme > $HOME/.config/qt6ct/qt6ct.conf
 
 # kde
-sed "s/{ICON_THEME}/$ICON_THEME/" $config_path/kdeglobals.theme > $HOME/.config/kdeglobals
+sed "s/{ICON_THEME}/$ICON_THEME/; s/{GTK_THEME}/$GTK_THEME/" $config_path/kdeglobals.theme > $HOME/.config/kdeglobals
 
 # xsettings
 sed "s/{CURSOR_THEME}/$CURSOR_THEME/; s/{ICON_THEME}/$ICON_THEME/; s/{GTK_THEME}/$GTK_THEME/" $config_path/xsettingsd.theme > $HOME/.config/xsettingsd/xsettingsd.conf

@@ -231,7 +231,7 @@ trough slider:hover {
 
   /* NOTE: Background need *opacity 1* otherwise will turn into the album art blurred  */
 .widget-mpris-player {
-    background-color: @background-sec;
+    background-color: @background;
     border-radius: 22px;
     padding: 6px 14px;
     margin: 6px;

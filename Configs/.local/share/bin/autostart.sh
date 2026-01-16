@@ -2,6 +2,7 @@
 
 # --- Variables ---
 SOURCE_PATH="$HOME/.local/share/bin"
+CACHE_PATH="$HOME/.cache"
 
 export $SOURCE_PATH
 export PATH="$PATH:$SOURCE_PATH"
@@ -45,7 +46,11 @@ blueman-applet &
 udiskie --no-automount --smart-tray &
 
 # Idle daemon
-hypridle &
+if [[ ! -f "$CACHE_PATH/idle_manager.status" ]]; then
+    echo "activated" >"$CACHE_PATH/idle_manager.status"
+fi
+IDLE_STATUS="$(tr -d '\n\r ' <"$CACHE_PATH/idle_manager.status")"
+$SOURCE_PATH/idle_manager.sh $IDLE_STATUS
 
 # On-screen display server
 $SOURCE_PATH/launch_osd.sh

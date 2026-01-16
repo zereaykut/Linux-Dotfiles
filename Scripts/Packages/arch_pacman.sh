@@ -85,6 +85,7 @@ PACKAGES_PACMAN=(
     "starship"                    # shell prompt
     "swww"                        # wallpaper daemon
     "udiskie"                     # automounting disks
+    "yazi"                        # file manager 
     "figlet"                      # create characters in many different styles
 
     # ========================================================== >> Hyprland Plugins / Build

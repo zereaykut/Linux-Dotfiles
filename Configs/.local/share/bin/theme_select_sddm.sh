@@ -2,6 +2,8 @@
 SDDM_PATH="/usr/share/sddm/"
 sddm_waydots="$SDDM_PATH/themes/SDDM-waydots/"
 rofi_conf="$HOME/.config/rofi/theme_select.rasi"
+cache_path="/$HOME/.cache/waydots/theme_sddm_previews/$theme/"
+mkdir -p $cache_path
 
 mapfile -d '' PICS < <(find "$sddm_waydots/themes" -maxdepth 2 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" \) -print0)
 
@@ -13,18 +15,24 @@ menu() {
     # Sort the PICS array
     IFS=$'\n' sorted_options=($(sort <<<"${PICS[*]}"))
 
-    # Place ". random" at the beginning with the random picture as an icon
-    # printf "%s\x00icon\x1f%s\n" "$RANDOM_PIC_NAME" "$RANDOM_PIC"
-
     for pic_path in "${sorted_options[@]}"; do
         pic_name=$(basename "$pic_path")
 
-        # Displaying .gif to indicate animated images
-        if [[ ! "$pic_name" =~ \.gif$ ]]; then
-            printf "%s\x00icon\x1f%s\n" "$(echo "$pic_name" | cut -d. -f1)" "$pic_path"
-        else
-            printf "%s\n" "$pic_name"
+        # If it's a GIF, extract the first frame as a temporary file
+        # if [[ "$pic_name" =~ \.gif$ ]]; then
+        cached_pic="$cache_path/$(basename "$pic_path" .gif).png"
+
+        # Check if the cached version already exists
+        if [[ ! -f "$cached_pic" ]]; then
+            # echo "Creating cached first frame for GIF: $pic_name"
+            # Extract first frame if it doesn't exist
+            magick "$pic_path"[0] -resize 480x270\! "$cached_pic"
         fi
+        pic_path="$cached_pic" # Replace GIF with cached first frame PNG
+        # fi
+
+        # Displaying the image path or file name
+        printf "%s\x00icon\x1f%s\n" "$(echo "$pic_name" | cut -d. -f1)" "$pic_path"
     done
 }
 

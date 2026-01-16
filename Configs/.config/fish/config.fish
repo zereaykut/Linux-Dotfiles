@@ -8,8 +8,11 @@ fish_add_path $SOURCE_PATH
 
 # 
 alias cc='clear'
+alias yz='yazi'
 # alias hl='helix'
 alias nv='nvim'
+alias vi='nvim'
+alias vim='nvim'
 
 # Eza
 alias  l='eza -lh  --icons=auto' # long list
@@ -46,12 +49,18 @@ alias vc='codium --disable-gpu'     # gui code editor
 alias pik='pikaur'
 
 # Git
-abbr gitc 'git clone'
+alias gt='git'
+alias ga='git add .'
+alias gs='git status -s'
+alias gc='git commit -m'
+alias glog='git log --online --graph --all'
+alias gcl='git clone'
 
 # Python
-alias pyev='python -m venv venv'      # create python environment named env
-alias pyac='. venv/bin/activate.fish'  # activate python environment in fish shell
-alias jp='jupyter lab'                # run jupyter lab
+alias pyev='python -m venv venv'               # create python environment named env
+alias pyac='. venv/bin/activate.fish'          # activate python environment in fish shell
+alias pyer='pip install -r requirements.txt'   # install listed packages in requirements.txt
+alias jp='jupyter lab'                         # run jupyter lab
 
 if status is-interactive
     # Commands to run in interactive sessions can go here

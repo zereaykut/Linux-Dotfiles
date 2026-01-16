@@ -4,6 +4,9 @@ TerminalApplication=kitty
 [Icons]
 Theme={ICON_THEME}
 
+[UiSettings]
+ColorScheme={GTK_THEME}
+
 [KDE]
 ShowDeleteCommand=false
 

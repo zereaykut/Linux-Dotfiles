@@ -11,6 +11,7 @@ BATTERY_NOTIFY_ID = 92999
 
 CHARGE_PLUG_NOTIFY_ID = 92998
 
+
 def secs2hours(secs: int) -> str:
     mm, ss = divmod(secs, 60)
     hh, mm = divmod(mm, 60)
@@ -26,7 +27,9 @@ def get_battery_info() -> dict:
     }
 
 
-def send_notification(message: str, icon: str, notify_id: int, timeout: int = 800, urgency:str = "normal") -> None:
+def send_notification(
+    message: str, icon: str, notify_id: int, timeout: int = 800, urgency: str = "normal"
+) -> None:
     sp.run(
         f"""notify-send "{message}" -i {icon} -r {notify_id} -t {timeout} -u {urgency}""",
         shell=True,
@@ -35,7 +38,7 @@ def send_notification(message: str, icon: str, notify_id: int, timeout: int = 80
 
 if __name__ == "__main__":
     user = sp.run("whoami", shell=True, capture_output=True, text=True).stdout.strip()
-    
+
     battery_info = get_battery_info()
     plugged_ = battery_info["power_plugged"]
 
@@ -48,7 +51,7 @@ if __name__ == "__main__":
                 f"/home/{user}/.config/dunst/icons/status/battery-status.png",
                 BATTERY_NOTIFY_ID,
                 10000,
-                "normal"
+                "normal",
             )
         elif (battery_info["percent"] <= BATTERY_CRITICAL) & (not plugged):
             send_notification(
@@ -56,9 +59,9 @@ if __name__ == "__main__":
                 f"/home/{user}/.config/dunst/icons/status/battery-status.png",
                 BATTERY_NOTIFY_ID,
                 10000,
-                "critical"
+                "critical",
             )
-        
+
         if plugged_ != plugged:
             if plugged:
                 send_notification(
@@ -66,7 +69,7 @@ if __name__ == "__main__":
                     f"/home/{user}/.config/dunst/icons/status/charger-plugged.svg",
                     CHARGE_PLUG_NOTIFY_ID,
                     5000,
-                    "normal"
+                    "normal",
                 )
             else:
                 send_notification(
@@ -74,10 +77,8 @@ if __name__ == "__main__":
                     f"/home/{user}/.config/dunst/icons/status/charger-not-plugged.svg",
                     CHARGE_PLUG_NOTIFY_ID,
                     5000,
-                    "normal"
+                    "normal",
                 )
             plugged_ = plugged
-        
+
         time.sleep(1)
-
-

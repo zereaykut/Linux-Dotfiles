@@ -7,9 +7,9 @@ source "$SCRIPT_DIR/global_fn.sh"
 create_folders() {
     log "=== Creating folders ==="
     mkdir -p ~/.config
-    mkdir -p ~/.local/share/{bin,waybar,themes}
+    mkdir -p ~/.local/share/bin
     mkdir -p ~/Projects ~/Documents ~/Downloads ~/Videos
-    mkdir -p ~/Pictures/Screenshots
+    mkdir -p ~/Pictures/{Screenshots,Swappy,MPV}
     mkdir -p ~/Torrent/{torrents,torrent_files,finished_torrents/{Movie,TV,Music,Other},finished_torrent_files,watched_torrent_files}
     log "Folders created successfully"
 }
