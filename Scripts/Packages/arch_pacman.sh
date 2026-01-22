@@ -86,6 +86,7 @@ PACKAGES_PACMAN=(
     "swww"                        # wallpaper daemon
     "udiskie"                     # automounting disks
     "yazi"                        # file manager 
+    "tree"                        # directory listing program 
     "figlet"                      # create characters in many different styles
 
     # ========================================================== >> Hyprland Plugins / Build

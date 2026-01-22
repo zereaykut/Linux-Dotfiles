@@ -43,10 +43,10 @@ binds {
     // Using spawn-sh allows to pass multiple arguments together with the command.
     XF86AudioMute        allow-when-locked=true { spawn-sh "swayosd-client --output-volume mute-toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "swayosd-client --input-volume mute-toggle"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "swayosd-client --output-volume -5"; }
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "swayosd-client --output-volume 5"; }
-    Shift+XF86AudioLowerVolume allow-when-locked=true { spawn-sh "swayosd-client --input-volume -5"; }
-    Shift+XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "swayosd-client --input-volume 5"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "swayosd-client --output-volume lower"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "swayosd-client --output-volume raise"; }
+    Shift+XF86AudioLowerVolume allow-when-locked=true { spawn-sh "swayosd-client --input-volume lower"; }
+    Shift+XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "swayosd-client --input-volume raise"; }
 
     // Example media keys mapping using playerctl.
     // This will work with any MPRIS-enabled media player.
@@ -58,8 +58,8 @@ binds {
     // Example brightness key mappings for brightnessctl.
     // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
     // but you need to manually put each argument in separate "" quotes.
-    XF86MonBrightnessUp allow-when-locked=true { spawn-sh "swayosd-client --brightness +5"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "swayosd-client --brightness -5"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn-sh "swayosd-client --brightness raise"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "swayosd-client --brightness lower"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
@@ -236,9 +236,10 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    Print { spawn-sh "screenshot.sh full"; }
+    Mod+Print { spawn-sh "screenshot.sh edit-full"; }
+    Alt+Print { spawn-sh "screenshot.sh region"; }
+    Ctrl+Print { spawn-sh "screenshot.sh edit-region"; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here

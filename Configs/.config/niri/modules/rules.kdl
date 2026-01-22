@@ -3,20 +3,21 @@
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
 
-// Work around WezTerm's initial configure bug
-// by setting an empty default-column-width.
 window-rule {
-    // This regular expression is intentionally made as specific as possible,
-    // since this is the default config, and we want no false positives.
+    open-maximized false
+}
+
+window-rule {
     match app-id="kitty"
-    default-column-width {}
+    match app-id="Alacritty"
+    open-maximized false
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id=r#"Rofi$"#
+    match app-id=r#"^blueman-manager$"#
+    match app-id=r#"pavucontrol$"#
     match app-id=r#"firefox$"# title="^About Mozilla Firefox$"
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     match app-id=r#"firefox$"# title="^Library$"
@@ -24,8 +25,8 @@ window-rule {
     match app-id=r#"org.kde.dolphin$"# title="^Moving — Dolphin$"
     match app-id=r#"org.kde.dolphin$"# title="^Copying — Dolphin$"
     match app-id=r#"org.kde.dolphin$"# title="^Progress Dialog — Dolphin$"
+    match app-id=r#"org.kde.ark$"#
     match app-id=r#"^qalculate-gtk$"#
-    match app-id=r#"^blueman-manager$"#
     match app-id=r#"^steam$"#
     match app-id=r#"^xdg-desktop-portal$"#
     open-floating true
@@ -33,13 +34,11 @@ window-rule {
 
 window-rule {
     match is-focused=false
-
     opacity 0.96
 }
 
 window-rule {
     match is-focused=true
-
     opacity 1.0
 }
 
@@ -50,7 +49,6 @@ window-rule {
 }
 
 // Example: block out two password managers from screen capture.
-// (This example rule is commented out with a "/-" in front.)
 /-window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
@@ -61,42 +59,13 @@ window-rule {
     // block-out-from "screencast"
 }
 
-// Example: enable rounded corners for all windows.
-// (This example rule is commented out with a "/-" in front.)
-/-window-rule {
-    geometry-corner-radius 12
-    clip-to-geometry true
-}
 layer-rule {
-  match namespace="^wallpaper$" 
-  place-within-backdrop true
-}
-
-
-window-rule {
-    match app-id=r#"pavucontrol"#
-    open-floating true
-}
-
-window-rule {
-    match app-id=r#"Rofi"#
-    open-floating true
-
-}
-
-
-window-rule {
-    match app-id=r#"blueman-manager"#
-    open-floating true
+    match namespace="^swww$"
+    match namespace="^wallpaper$"
+    place-within-backdrop true
 }
 
 // Open 5 workspaces
 workspace "1"
 workspace "2"
 workspace "3"
-
-
-window-rule {
-    match app-id="kitty"
-    opacity 0.95
-}
