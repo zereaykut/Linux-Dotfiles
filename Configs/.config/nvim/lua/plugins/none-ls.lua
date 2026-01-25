@@ -8,6 +8,9 @@ return {
 				null_ls.builtins.formatting.stylua, -- Lua Formatter
 				null_ls.builtins.formatting.black, -- Python Formatter
 				null_ls.builtins.formatting.shfmt, -- Bash Formatter
+				null_ls.builtins.formatting.prettier.with({
+					filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "json" },
+				}), -- JavaScript / TypeScript
 			},
 		})
 	end,

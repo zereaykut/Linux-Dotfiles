@@ -1,0 +1,38 @@
+return {
+	-- 	"olimorris/codecompanion.nvim",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"nvim-treesitter/nvim-treesitter",
+	-- 	},
+	-- 	config = function()
+	-- 		require("codecompanion").setup({
+	-- 			strategies = {
+	-- 				-- Use Gemini for both Chat and Inline Editing
+	-- 				chat = { adapter = "gemini" },
+	-- 				inline = { adapter = "gemini" },
+	-- 				agent = { adapter = "gemini" },
+	-- 			},
+	-- 			adapters = {
+	-- 				gemini = function()
+	-- 					return require("codecompanion.adapters").extend("gemini", {
+	-- 						env = {
+	-- 							api_key = os.getenv("GEMINI_API_KEY"),
+	-- 						},
+	-- 						schema = {
+	-- 							model = {
+	-- 								-- You can change this to "gemini-1.5-flash" for faster/cheaper responses
+	-- 								default = "gemini-1.5-pro",
+	-- 							},
+	-- 						},
+	-- 					})
+	-- 				end,
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- 	-- Recommended Keymaps
+	-- 	keys = {
+	-- 		{ "<leader>aa", "<cmd>CodeCompanionActions<cr>", mode = { "n", "v" }, desc = "AI Actions" },
+	-- 		{ "<leader>ac", "<cmd>CodeCompanionChat<cr>", mode = { "n", "v" }, desc = "AI Chat" },
+	-- 		{ "<leader>ai", "<cmd>CodeCompanion<cr>", mode = { "n", "v" }, desc = "AI Inline" },
+	-- 	},
+}

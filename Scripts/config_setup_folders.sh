@@ -10,7 +10,7 @@ create_folders() {
     mkdir -p ~/.local/share/bin
     mkdir -p ~/Projects ~/Documents ~/Downloads ~/Videos
     mkdir -p ~/Pictures/{Screenshots,Swappy,MPV}
-    mkdir -p ~/Torrent/{torrents,torrent_files,finished_torrents/{Movie,TV,Music,Other},finished_torrent_files,watched_torrent_files}
+    mkdir -p ~/Torrent/{torrents,torrent_files,finished_torrents/{Animation,Game,Movie,TV,Music,Other},finished_torrent_files,watched_torrent_files}
     log "Folders created successfully"
 }
 
