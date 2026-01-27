@@ -1,7 +1,7 @@
 {
     "custom/idle-manager": {
         "format" : "{}",
-        "exec": "~/.local/share/bin/idle_manager_status.sh",
+        "exec": "~/.config/waybar/scripts/idle_manager_status.sh",
         "interval": 1,
         "tooltip": true,
         "exec-if": "exit 0",

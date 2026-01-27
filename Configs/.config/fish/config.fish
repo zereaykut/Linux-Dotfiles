@@ -49,11 +49,19 @@ alias vc='codium --disable-gpu'     # gui code editor
 alias pik='pikaur'
 
 # Git
-alias gt='git'
-alias ga='git add .'
-alias gs='git status -s'
+alias gd='git diff'
+
+
+alias ga='git add'
 alias gc='git commit -m'
-alias glog='git log --online --graph --all'
+
+alias gp='git push'
+alias gu='git pull'
+
+alias gb='git branch'
+alias gs='git status -s'
+alias gl='git log --online --graph --all'
+alias gi="git init"
 alias gcl='git clone'
 
 # Python
@@ -74,8 +82,8 @@ if status is-interactive
     # zoxide is a smarter cd command, inspired by z and autojump.
     zoxide init fish | source
 
-    # Startup termşnal with a gif
-    random_kitty_gif.sh
+    # Startup kitty terminal with a gif
+    ~/.config/kitty/scripts/random_gif.sh
     
     # Starship
     starship init fish | source

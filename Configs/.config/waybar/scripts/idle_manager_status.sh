@@ -20,18 +20,18 @@ esac
 
 case "$status" in
   "activated")
-    text=" 󰅶 "
-    tooltip="󰅶 Idle Manager: Activated"
+    text=" 󰛊 "
+    tooltip="󰛊 Caffeine: Activated"
     echo "{\"text\":\"$text\", \"tooltip\":\"$tooltip\"}"
     ;;
   "deactivated")
-    text=" 󰛊 "
-    tooltip="󰛊 Idle Manager: Deactivated"
+    text=" 󰅶 "
+    tooltip="󰅶 Caffeine: Deactivated"
     echo "{\"text\":\"$text\", \"tooltip\":\"$tooltip\"}"
     ;;
   *)
     text="  "
-    tooltip=" Idle Manager: Unknown (check $STATUS_FILE)"
+    tooltip=" Caffeine: Unknown (check $STATUS_FILE)"
     echo "{\"text\":\"$text\", \"tooltip\":\"$tooltip\"}"
     ;;
 esac

@@ -86,6 +86,7 @@ tooltip {
 
 
 /* Modules -> Single */
+#custom-global-menu,
 #custom-power_menu,
 #custom-power-profiles-daemon,
 #group-power_menu,
@@ -171,6 +172,7 @@ tooltip {
   color: @green;
 }
 
+#custom-global-menu,
 #custom-power_menu,
 #group-power_menu,
 #custom-reboot,

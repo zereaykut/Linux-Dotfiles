@@ -1,7 +1,7 @@
 {
     "custom/power-profiles-daemon": {
         "format" : "{}",
-        "exec": "~/.local/share/bin/power_profiles_status.sh",
+        "exec": "~/.config/waybar/scripts/power_profiles_status.sh",
         "interval": 1,
         "tooltip": true,
         "exec-if": "exit 0",

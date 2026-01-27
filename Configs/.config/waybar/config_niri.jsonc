@@ -27,11 +27,11 @@
     "~/.config/waybar/modules/custom_power_profiles_daemon.jsonc",
     "~/.config/waybar/modules/custom_system_updates.jsonc",
     "~/.config/waybar/modules/custom_notification.jsonc",
-    "~/.config/waybar/modules/custom_group_power_menu.jsonc",
+    "~/.config/waybar/modules/custom_global_menu.jsonc",
   ],
 
   "modules-left": ["cpu", "memory", "temperature", "disk", "backlight", "pulseaudio", "pulseaudio#microphone"],
   "modules-center": ["niri/workspaces", "wlr/taskbar", "clock", "custom/idle-manager", "keyboard-state"],
-  "modules-right": ["battery", "network", "tray", "custom/system-updates", "custom/power-profiles-daemon", "custom/notification", "group/power_menu"],
+  "modules-right": ["battery", "network", "tray", "custom/system-updates", "custom/power-profiles-daemon", "custom/notification", "custom/global-menu"],
 
 }

@@ -3,12 +3,12 @@
   <object class="GtkMenu" id="menu">
 	<child>
 		<object class="GtkMenuItem" id="activate">
-			<property name="label">󰅶 Activate</property>
+			<property name="label">󰅶 Caffeine: Activate</property>
         </object>
 	</child>
 	<child>
         <object class="GtkMenuItem" id="deactivate">
-			<property name="label">󰛊 Deactivate</property>
+			<property name="label">󰛊 Caffeine: Deactivate</property>
         </object>
 	</child>
   </object>
