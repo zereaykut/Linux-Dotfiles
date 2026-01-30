@@ -1,0 +1,71 @@
+
+// Window rules let you adjust behavior for individual windows.
+// Find more information on the wiki:
+// https://yalter.github.io/niri/Configuration:-Window-Rules
+
+window-rule {
+    // open-maximized true
+}
+
+window-rule {
+    match app-id="kitty"
+    match app-id="Alacritty"
+    open-maximized false
+}
+
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    match app-id=r#"Rofi$"#
+    match app-id=r#"^blueman-manager$"#
+    match app-id=r#"pavucontrol$"#
+    match app-id=r#"firefox$"# title="^About Mozilla Firefox$"
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r#"firefox$"# title="^Library$"
+    match app-id=r#"firefox$"# title="^Bitwarden$"
+    match app-id=r#"org.kde.dolphin$"# title="^Moving — Dolphin$"
+    match app-id=r#"org.kde.dolphin$"# title="^Copying — Dolphin$"
+    match app-id=r#"org.kde.dolphin$"# title="^Progress Dialog — Dolphin$"
+    match app-id=r#"org.kde.ark$"#
+    match app-id=r#"^qalculate-gtk$"#
+    match app-id=r#"^steam$"#
+    match app-id=r#"^xdg-desktop-portal$"#
+    open-floating true
+}
+
+window-rule {
+    match is-focused=false
+    opacity 0.96
+}
+
+window-rule {
+    match is-focused=true
+    opacity 1.0
+}
+
+window-rule {
+    // Border radius 
+    clip-to-geometry true
+    geometry-corner-radius 10
+}
+
+// Example: block out two password managers from screen capture.
+/-window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+
+    block-out-from "screen-capture"
+
+    // Use this instead if you want them visible on third-party screenshot tools.
+    // block-out-from "screencast"
+}
+
+layer-rule {
+    match namespace="^swww$"
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+
+// Open 5 workspaces
+workspace "1"
+workspace "2"
+workspace "3"

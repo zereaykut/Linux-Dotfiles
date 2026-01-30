@@ -1,0 +1,4 @@
+[server]
+show_percentage = false
+max_volume = 100
+style = "./style.css"

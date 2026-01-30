@@ -1,0 +1,274 @@
+{
+    "telemetry.sqmId": "",
+    "telemetry.machineId": "ef73318a15b6562123e00993db009c55a96f91c27865d89b4b1f28c14f342fd7",
+    "telemetry.devDeviceId": "769dd64a-7e2b-404c-859a-7c3220f31fc5",
+    "backupWorkspaces": {
+        "workspaces": [],
+        "folders": [],
+        "emptyWindows": [
+            {
+                "backupFolder": "1769786171764"
+            }
+        ]
+    },
+    "windowControlHeight": 35,
+    "profileAssociations": {
+        "workspaces": {
+            "file:///home/spidy/Projects/Hyprland-Config": "__default__profile__",
+            "file:///home/spidy/Projects/caracal": "__default__profile__",
+            "file:///home/spidy/Projects/entsoe-py-master": "__default__profile__",
+            "file:///home/spidy/.config/hypr": "__default__profile__",
+            "file:///home/spidy/Projects/Hyprland-Config/Configs/.local/share/bin": "__default__profile__",
+            "file:///home/spidy/.local/share/bin": "__default__profile__",
+            "file:///home/spidy/Projects/Hyprland-Config/Scripts": "__default__profile__",
+            "file:///home/spidy/.config/waybar": "__default__profile__",
+            "file:///home/spidy/.config/niri": "__default__profile__",
+            "file:///home/spidy/.config/wayfire": "__default__profile__",
+            "file:///home/spidy/Projects/mto-data-retrieval": "__default__profile__",
+            "file:///home/spidy/Projects/cloud_tracking_mto_509e": "__default__profile__",
+            "file:///home/spidy/Projects/Cumulus-Tracking": "__default__profile__",
+            "file:///home/spidy/Projects/Cloud%20Tracking": "__default__profile__",
+            "file:///home/spidy/Projects": "__default__profile__",
+            "file:///home/spidy/Projects/Linux-Dotfiles": "__default__profile__",
+            "file:///home/spidy/Downloads/epias_transparency_updated": "__default__profile__",
+            "file:///home/spidy/Github%20Repos/hendrikmi/dotfiles-main/nvim": "__default__profile__",
+            "file:///home/spidy/.config/nvim": "__default__profile__",
+            "file:///home/spidy/Projects/dotfiles-main%20for%20nvim/nvim": "__default__profile__",
+            "file:///home/spidy/Projects/EPIAS-Transparency-API": "__default__profile__",
+            "file:///home/spidy/Projects/Open-Meteo-API": "__default__profile__",
+            "file:///home/spidy/Projects/EVDS-API": "__default__profile__",
+            "file:///home/spidy/Projects/EPYS-API": "__default__profile__",
+            "file:///home/spidy/Projects/MTO-NWP-Data": "__default__profile__",
+            "file:///home/spidy/Projects/EPIAS-Imbalance-Cost": "__default__profile__",
+            "file:///home/spidy/.config/nvim/lua": "__default__profile__",
+            "file:///home/spidy/Projects/NEOVIM": "__default__profile__",
+            "file:///home/spidy/Projects/Linux-Dotfiles/Configs/.config/nvim/lua/plugins": "__default__profile__",
+            "file:///home/spidy/Projects/Linux-Dotfiles/Configs/.config/nvim": "__default__profile__",
+            "file:///home/spidy/Projects/Copernicus-Climate-Projection": "__default__profile__",
+            "file:///home/spidy/.config/waybar/modules": "__default__profile__",
+            "file:///home/spidy/Projects/Tensorflow-Keras": "__default__profile__",
+            "file:///home/spidy/Projects/EVDS": "__default__profile__",
+            "file:///home/spidy/Projects/EPIAS-Transparency": "__default__profile__",
+            "file:///home/spidy/Projects/Open-Meteo": "__default__profile__"
+        },
+        "emptyWindows": {
+            "1769786014207": "__default__profile__",
+            "1769786054052": "__default__profile__",
+            "1769786073390": "__default__profile__",
+            "1769786104840": "__default__profile__",
+            "1769786146298": "__default__profile__",
+            "1769786171764": "__default__profile__"
+        }
+    },
+    "theme": "vs-dark",
+    "themeBackground": "#1f1f1f",
+    "windowSplash": {
+        "zoomLevel": 0,
+        "baseTheme": "vs-dark",
+        "colorInfo": {
+            "foreground": "#cccccc",
+            "background": "#1f1f1f",
+            "editorBackground": "#1f1f1f",
+            "titleBarBackground": "#181818",
+            "titleBarBorder": "#2b2b2b",
+            "activityBarBackground": "#181818",
+            "activityBarBorder": "#2b2b2b",
+            "sideBarBackground": "#181818",
+            "sideBarBorder": "#2b2b2b",
+            "statusBarBackground": "#181818",
+            "statusBarBorder": "#2b2b2b",
+            "statusBarNoFolderBackground": "#1f1f1f"
+        },
+        "layoutInfo": {
+            "sideBarSide": "left",
+            "editorPartMinWidth": 220,
+            "titleBarHeight": 35,
+            "activityBarWidth": 48,
+            "sideBarWidth": 0,
+            "auxiliaryBarWidth": 0,
+            "statusBarHeight": 22,
+            "windowBorder": false
+        }
+    },
+    "windowsState": {
+        "lastActiveWindow": {
+            "backupPath": "/home/spidy/.config/VSCodium/Backups/1769786171764",
+            "uiState": {
+                "mode": 0,
+                "x": 0,
+                "y": 0,
+                "width": 952,
+                "height": 1025
+            }
+        },
+        "openedWindows": []
+    },
+    "windowSplashWorkspaceOverride": {
+        "layoutInfo": {
+            "sideBarWidth": 236,
+            "auxiliaryBarWidth": 300,
+            "workspaces": {
+                "b01ea97dc3736fa186a7c5fa8296ad71": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "cd7c3a013e0052795c7784fab7fc8dd8": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "9b7f30e5d298e8af6917295ea6e42dbd": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "3b9bc0781fa61bfd4d70f1ccabdb54dd": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "7b1fe918ac5a3a66c0e95c12bdb3930b": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "36f86ade27966d6db2d29396c50c4334": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "7a5407633b1abcafeb939b9027419e18": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "26b39ca2b63968d60d50e8cd7c624fd1": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "6d1288ab2c986f6d5b2e5c890b76be5a": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "2210a1b010c5e1c8a76a13f964aeb61d": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "3e67406483c8b404d7407b3617d3ac0a": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "438580d443571fc43301bf3926bc289f": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "7fb949394a86dd13bdcaa4be5b6524e2": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "86fbc8aa38d0d1842e16949f91cf9b05": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "82b8b206462ae60ee61c76d9041196f2": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "d1dffd016f7aaf8aea912296b13d06eb": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "db30c55cd79c3f6dbf9508b658518f43": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "d4c69015030609d39ac9d3ba6e720eb3": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "7fc91eba2fcde398ac2ba55e09d996b5": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "d2b777abbd171cb891daa4f7f8470c7c": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "e8622150842c01dee486897bfd305f09": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "513b37913030c34b45edc7b895ad6d43": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "7a9f3c3578815ea0787be0851c90aea0": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "894d893089f6b6fa26a6422fe81ba394": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "7cdaa1f708aac7b33482622da99d5a0e": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "bd00346e7074d21bf5238e64719a7005": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "7bb8d346a80bc733b99502e562524479": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "9230dc1e09ebf85b763a545948ddc62a": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "587850cd4040a6a4dbcf5d0aa720b6a0": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "d7b2633ec9f76b59b1454545008ccc75": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "f20347f86ac6a07845d7ee642ff52487": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "31b5dd976f4fd30680217607ba8666d4": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "373a2f3c30b7b4a44656ccbe744b5ea5": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "dae5ffc2c59d5ca67183480e0579dda1": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "25acc1a8233ce49a9e521d1614eb2b08": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "c37ffd33ce089dfb9293123de1510f52": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "6d79ed1f05fab05a2d39c2ca29d793fa": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "db21e8ba8caa0178c803a68d2f88db7e": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "4688babc00ae1bc98643544f4f2ce299": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "55f8ff8f86a309f264f5284b6a4bae5d": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                }
+            }
+        }
+    }
+}

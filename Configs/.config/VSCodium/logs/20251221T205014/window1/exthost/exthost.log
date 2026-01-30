@@ -1,0 +1,12 @@
+2025-12-21 20:50:15.961 [info] Extension host with pid 39022 started
+2025-12-21 20:50:15.961 [info] Skipping acquiring lock for /home/spidy/.config/VSCodium/User/workspaceStorage/7fb949394a86dd13bdcaa4be5b6524e2.
+2025-12-21 20:50:15.987 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-12-21 20:50:16.029 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-12-21 20:50:16.061 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-12-21 20:50:16.109 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-12-21 20:50:16.208 [info] Eager extensions activated
+2025-12-21 20:50:16.218 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-12-21 20:50:16.220 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-12-21 20:50:18.939 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-12-21 23:49:44.593 [info] Extension host terminating: renderer closed the MessagePort
+2025-12-21 23:49:44.602 [info] Extension host with pid 39022 exiting with code 0

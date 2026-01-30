@@ -1,0 +1,14 @@
+xarray
+dask[distributed]
+numpy
+pandas
+matplotlib
+scipy
+cfgrib
+netcdf4
+h5netcdf
+bottleneck
+zarr
+cartopy
+shapely
+pyproj

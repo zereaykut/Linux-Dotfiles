@@ -1,0 +1,5 @@
+[mgr]
+ratio = [2, 3, 3]
+show_hidden = true
+sort_by = "alphabetical"
+sort_dir_first = true

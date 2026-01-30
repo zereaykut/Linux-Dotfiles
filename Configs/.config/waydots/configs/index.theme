@@ -2,4 +2,4 @@
 [Icon Theme]
 Name=Default
 Comment=Default Cursor Theme
-Inherits={CURSOR_THEME}
+Inherits=$CURSOR_THEME

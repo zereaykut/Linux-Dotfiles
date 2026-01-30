@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{geometry}
+
+\title{İntegral Çözüm Raporu}
+\author{}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Soru}
+Aşağıdaki integralin $D_n$ katsayısı için hesaplanması:
+\[
+D_n = \frac{2}{l} \int_0^l x \sin\left(\frac{n\pi}{l}x\right) \, dx
+\]
+
+\section*{Çözüm}
+Bu integral \textbf{Kısmi İntegrasyon} yöntemi ile çözülür. Formülümüz: $\int u \, dv = uv - \int v \, du$.
+
+\subsection*{Değişken Seçimi}
+\begin{align*}
+u &= x \implies du = dx \\
+dv &= \sin\left(\frac{n\pi}{l}x\right) \, dx \implies v = -\frac{l}{n\pi} \cos\left(\frac{n\pi}{l}x\right)
+\end{align*}
+
+\subsection*{İşlemler}
+İntegrali formülde yerine koyalım:
+\[
+\int_0^l x \sin\left(\frac{n\pi}{l}x\right) \, dx = \left[ -x \frac{l}{n\pi} \cos\left(\frac{n\pi}{l}x\right) \right]_0^l + \frac{l}{n\pi} \int_0^l \cos\left(\frac{n\pi}{l}x\right) \, dx
+\]
+
+Sınırları yerine koyarsak:
+\begin{itemize}
+    \item Birinci kısım: $-\frac{l^2}{n\pi}\cos(n\pi) - 0$
+    \item İkinci kısım: $\sin(n\pi) = 0$ olduğundan sonuç 0'dır.
+\end{itemize}
+
+\section*{Sonuç}
+Başlangıçtaki $\frac{2}{l}$ katsayısını ekleyerek sonucu buluruz:
+\[
+D_n = \frac{2}{l} \left( -\frac{l^2}{n\pi} \cos(n\pi) \right) = -\frac{2l}{n\pi} (-1)^n
+\]
+Veya işareti düzenlersek:
+\[
+\boxed{D_n = \frac{2l}{n\pi} (-1)^{n+1}}
+\]
+
+\end{document}

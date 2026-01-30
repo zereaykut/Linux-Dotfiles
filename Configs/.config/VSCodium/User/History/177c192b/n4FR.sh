@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+
+###############################################################
+# close-all.sh
+#
+# This script detects whether the current Wayland session is
+# running under Hyprland or Niri window manager, and then
+# automatically closes all open windows in that session.
+#
+# Detection:
+#   - Uses $XDG_CURRENT_DESKTOP when available
+#   - Falls back to checking running processes (hyprland / niri)
+#
+# Actions:
+#   • Hyprland:
+#       - Lists all clients via `hyprctl clients -j`
+#       - Extracts each window address and closes them using:
+#           hyprctl dispatch closewindow <addr>
+#
+#   • Niri:
+#       - Lists windows via `niri msg -j windows`
+#       - Extracts window IDs and closes them using:
+#           niri msg action close-window <id>
+#
+# Requirements:
+#   - jq must be installed
+#   - Hyprland or Niri must be running
+#
+# Usage:
+#   chmod +x close-all.sh
+#   ./close-all.sh
+###############################################################
+
+# Detect current Wayland compositor based on XDG_CURRENT_DESKTOP or WAYLAND_DISPLAY
+session="${XDG_CURRENT_DESKTOP,,}"
+
+# Fallback: query running processes if the variable is empty
+if [[ -z "$session" ]]; then
+    if pgrep -x hyprland >/dev/null; then
+        session="hyprland"
+    elif pgrep -x niri >/dev/null; then
+        session="niri"
+    fi
+fi
+
+echo "Detected session: $session"
+
+###########################################
+# Hyprland
+###########################################
+if [[ "$session" == *"hyprland"* ]]; then
+    echo "Closing all windows in Hyprland..."
+
+    hyprctl clients -j | jq -r '.[].address' | while read -r addr; do
+        hyprctl dispatch closewindow "$addr"
+    done
+
+    exit 0
+fi
+
+
+###########################################
+# Niri
+###########################################
+if [[ "$session" == *"niri"* ]]; then
+    echo "Closing all windows in Niri..."
+
+    niri msg -j windows | jq -r '.[].id' | while read -r wid; do
+        niri msg action close-window "$wid"
+    done
+
+    exit 0
+fi
+
+echo "Unsupported or unknown session. (Supported: Hyprland, Niri)"
+exit 1

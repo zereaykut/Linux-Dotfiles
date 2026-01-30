@@ -1,0 +1,17 @@
+{
+    "niri/workspaces": {
+	"format": "{icon}",
+	"format-icons": {
+		// Named workspaces
+		// (you need to configure them in niri)
+		// "terminal": "",
+		// "code": "",
+		// "browser": "",
+		// "ai": "<b></b>",
+
+		// Icons by state
+		"active": "",
+		"default": ""
+	}
+}
+}

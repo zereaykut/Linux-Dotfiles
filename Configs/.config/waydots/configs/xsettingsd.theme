@@ -1,6 +1,6 @@
-Net/ThemeName "{GTK_THEME}"
-Net/IconThemeName "{ICON_THEME}"
-Gtk/CursorThemeName "{CURSOR_THEME}"
+Net/ThemeName "$GTK_THEME"
+Net/IconThemeName "$ICON_THEME"
+Gtk/CursorThemeName "$CURSOR_THEME"
 Net/EnableEventSounds 1
 EnableInputFeedbackSounds 0
 Xft/Antialias 1

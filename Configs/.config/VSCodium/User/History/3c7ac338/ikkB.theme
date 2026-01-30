@@ -1,0 +1,4 @@
+@define-color background #18100f;
+@define-color foreground #abb1c5;
+@define-color active-background #fad429;
+@define-color hover-background #E59F22;

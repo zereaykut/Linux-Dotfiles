@@ -1,0 +1,12 @@
+pandas
+numpy
+openpyxl
+matplotlib
+
+scikit-learn
+scikit-image
+tensorflow
+keras
+keras-hub
+keras_cv
+transformers

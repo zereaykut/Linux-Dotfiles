@@ -2,10 +2,10 @@
 TerminalApplication=kitty
 
 [Icons]
-Theme={ICON_THEME}
+Theme=$ICON_THEME
 
 [UiSettings]
-ColorScheme={GTK_THEME}
+ColorScheme=$GTK_THEME
 
 [KDE]
 ShowDeleteCommand=false

@@ -1,0 +1,219 @@
+* {
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 12px;
+  font-weight: 900;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+@import "theme.css";
+
+window#waybar {
+  background-color: transparent;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  border-radius: 0px;
+  transition-duration: 0.5s;
+  margin: 0px 0px;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+tooltip {
+  background: @background;
+  color: @text;
+  text-shadow: none;
+}
+
+#workspaces button.focused {
+  background-color: transparent;
+}
+
+#workspaces,
+#taskbar {
+  padding: 0px 15px;
+  color: @text;
+  border-radius: 20px;
+  background-color: @background;
+  margin-right: 3px;
+  margin-left: 3px
+}
+
+#workspaces button,
+#taskbar button {
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0px;
+  border-radius: 9px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
+  color: @text;;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button.active,
+#taskbar button.active {
+  /* background: @active-background; */
+  color: @active-foreground;
+  border-top: 3px solid @active-background;
+  border-bottom: 3px solid @active-background;
+  margin-left: 3px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-right: 3px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button:hover,
+#taskbar button:hover {
+  /* background: @hover-background; */
+  color: @hover-foreground;
+  border-top: 3px solid @hover-background;
+  border-bottom: 3px solid @hover-background;
+  padding-left: 3px;
+  padding-right: 3px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+
+/* Modules -> Single */
+#custom-power_menu,
+#custom-power-profiles-daemon,
+#group-power_menu,
+#network,
+#battery,
+#clock,
+#tray,
+#mpris,
+#bluetooth,
+#custom-system-updates,
+#custom-notification,
+#custom-hyprPicker {
+  padding: 0px 15px;
+  color: @text;;
+  border-radius: 20px;
+  background-color: @background;
+  margin-right: 3px;
+  margin-left: 3px;
+}
+
+/*Modules -> Middle*/
+#custom-reboot,
+#memory,
+#temperature,
+#privacy,
+#custom-yay,
+#custom-pikaur,
+#pulseaudio {
+  padding: 0px 15px 0px 15px;
+  color: @text;;
+  border-radius: 0px;
+  background-color: @background;
+}
+
+/*Modules -> Right */
+#custom-shutdown,
+#pulseaudio.microphone,
+#keyboard-state,
+#disk {
+  padding: 0px 15px 0px 15px;
+  color: @text;;
+  border-radius: 0px 20px 20px 0px;
+  background-color: @background;
+}
+
+/*Modules -> Left */
+#custom-logout,
+#cpu,
+#idle_inhibitor,
+#custom-idle_inhibitor,
+#backlight {
+  padding: 0px 15px 0px 15px;
+  color: @text;;
+  border-radius: 20px 0px 0px 20px;
+  background-color: @background;
+  margin-left: 3px;
+}
+
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+/* Update colors of some modules */
+#custom-system-updates,
+#cpu,
+#backlight {
+  color: @yellow;
+}
+
+#custom-power-profiles-daemon {
+  color: @orange;
+}
+
+#disk,
+#battery {
+  color: @green;
+}
+
+#custom-power_menu,
+#group-power_menu,
+#custom-reboot,
+#custom-shutdown,
+#custom-logout,
+#temperature {
+  color: @red;
+}
+
+#network,
+#custom-notification {
+  color: @pink;
+}
+
+#pulseaudio,
+#pulseaudio.microphone {
+  color: @blue;
+}
+
+#memory {
+  color: @purple;
+}
+
+/*Critical Warning*/
+@keyframes blink {
+  to {
+      color: @text;
+  }
+}
+
+#workspaces button.urgent,
+#keyboard-state > label.locked,
+#tray > .needs-attention,
+#temperature.critical,
+#network.disconnected,
+#bluetooth.disconnected,
+#battery.warning,
+#battery.critical {
+  color: @red;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+

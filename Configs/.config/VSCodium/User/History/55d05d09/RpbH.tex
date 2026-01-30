@@ -1,0 +1,248 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[turkish]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage{geometry}
+\usepackage{physics}
+\usepackage{bm}
+\geometry{margin=2.3cm}
+\sisetup{locale=DE,per-mode=symbol}
+
+\title{Bulut Fiziği ve Yağış Dersi -- Örnek Soru Çözümleri}
+\author{Detaylı Çözüm Notu}
+\date{}
+
+\begin{document}
+\maketitle
+
+Bu dokümanda verilen örnek sorular, ara sınav hazırlığı için detaylı adımlarla çözümlenmiştir.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Soru 1 -- Yoğunlaşma Isısı ile Isınma}
+
+Verilenler:
+\begin{itemize}
+  \item Dikey hız: \(w = \SI{20}{\meter\per\second}\)
+  \item Yoğuşan nem: \(\Delta q_v = 0.005\)
+  \item Gizli ısı: \(L = 2.5 \times 10^6\)
+  \item \(c_p = 1004\)
+\end{itemize}
+
+Birim kütlede açığa çıkan ısı:
+\[
+\Delta Q = L \Delta q_v = 1.25\times 10^4 \, \text{J/kg}
+\]
+
+Sıcaklık artışı:
+\[
+\Delta T = \frac{\Delta Q}{c_p} \approx 12.4 \, \text{K}
+\]
+
+Dikey tabakayı geçiş süresi:
+\[
+\Delta t = \frac{1000}{20} = 50 \, \text{s}
+\]
+
+Isınma oranı:
+\[
+\frac{\Delta T}{\Delta t} \approx 0.25 \,\text{K/s}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Soru 2 -- Buharlaşma ve Negatif Yüzdürme}
+
+\[
+\Delta T = -\frac{L \Delta q_v}{c_p}
+\]
+
+Sayısal:
+\[
+\Delta T \approx -20 \, \text{K}
+\]
+
+Yüzdürme:
+\[
+B = g \frac{\Delta T}{T} \approx -0.65\, \text{m/s}^2
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Soru 3 -- Neden \(\Gamma_m < \Gamma_d\)?}
+
+Kuru adyabatik:
+\[
+\Gamma_d = \frac{g}{c_p} \approx 9.8 \, \text{K/km}
+\]
+
+Nemli adyabatik:
+\[
+\Gamma_m < \Gamma_d
+\]
+
+Çünkü yoğuşma gizli ısı açığa çıkarır → soğuma hızı azalır.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Soru 4 -- Sanal Sıcaklık Düzeltmeli CAPE}
+
+CAPE:
+\[
+\text{CAPE} = \int g \frac{T_{v,p} - T_{v,e}}{T_{v,e}} dz
+\]
+
+Yaklaşık yüzdürme:
+\[
+B \approx g \frac{8}{265} \approx 0.30 \, \text{m/s}^2
+\]
+
+CAPE:
+\[
+\text{CAPE} \approx 0.30 \times 4200 \approx 1300 \, \text{J/kg}
+\]
+
+Sanal sıcaklık düzeltmesi:
+\[
+\text{CAPE}_v \approx 1100 \, \text{J/kg}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Soru 5 -- CIN Hesabı}
+
+\[
+\text{CIN} = -\int g \frac{T_{v,p}-T_{v,e}}{T_{v,e}} dz
+\]
+
+Örnek:
+\[
+\text{CIN} \approx 45\, \text{J/kg}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Soru 6 -- Süpersatürasyon Zamanskalası}
+
+Yükselme zamanı:
+\[
+\tau_{asc} = 40\, \text{s}
+\]
+
+Süpersatürasyon:
+\[
+S \approx \frac{\tau_{asc}}{\tau_{cond}} = 0.2 = 20\%
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Soru 7 -- Boussinesq Yaklaşımı}
+
+Ana varsayımlar:
+\begin{itemize}
+  \item \(|\rho'| \ll \rho_0\)
+  \item \(\nabla \cdot \mathbf{v} = 0\)
+  \item Akustik dalgalar filtrelenir
+\end{itemize}
+
+Dikey momentum:
+\[
+\frac{Dw}{Dt} = -\frac{1}{\rho_0} \frac{\partial p'}{\partial z} + B
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Soru 8 -- Nemli Adyabatik Lapse Rate Türevi}
+
+\[
+\Gamma_m = \Gamma_d 
+\frac{1 + \frac{L q_s}{R_d T}}
+     {1 + \frac{L^2 q_s}{c_p R_v T^2}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Soru 9 -- CAPE'den Max Updraft}
+
+\[
+w_{\max} = \sqrt{2\,\text{CAPE}} = 77.5\, \text{m/s}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Soru 10 -- Tilt ile Dikey Vortisite Üretimi}
+
+\[
+\left(\frac{d\omega}{dt}\right)_{tilt} = \eta S
+\]
+
+\[
+3\times 10^{-4} \, \text{s}^{-2}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Soru 11 -- Negatif Yüzdürme ve Rüzgâr}
+
+\[
+B = -0.25 \, \text{m/s}^2
+\]
+
+\[
+\text{DCAPE} \approx 750\, \text{J/kg}
+\]
+
+\[
+w_{\max} \approx 39\, \text{m/s}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Soru 12 -- Vortisten Basınç Farkı}
+
+\[
+\Delta p = \frac{1}{2} \rho \Omega^2 R^2
+\]
+
+\[
+\Delta p \approx 8 \, \text{hPa}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Soru 13 -- Sağ Hareketli Süper Hücre}
+
+Pozitif SRH → mesosiklon → düşük basınç → sağa sapma.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Soru 14 -- Hodograf Eğriliği}
+
+Saat yönünde eğri hodograf → sağ hareketli süper hücreyi güçlendirir.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Soru 15 -- Kelvin Etkisi}
+
+\[
+e_s(r) = e_s(\infty) \exp\left(\frac{2\sigma}{\rho_w R_v T r}\right)
+\]
+
+Küçük damlada \(e_s\) büyüktür → buharlaşma eğilimi artar.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Soru 16 -- Köhler Teorisi}
+
+\[
+\ln S = \frac{A}{r} - \frac{B}{r^3}
+\]
+
+\[
+r_c = \left(\frac{3B}{A}\right)^{1/2}
+\]
+
+Minik NaCl taneciği → çok yüksek \(S_c\).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Soru 17 -- Bergeron Süreci}
+
+\[
+e_{sw} > e_{si}
+\]
+
+Buz için süpersatürasyon ≈ %30.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Soru 18 -- CAPE vs Dinamik Basınç}
+
+CAPE updraft'ı başlatır;  
+dinamik basınç (mesosiklon) olgun süper hücrede daha baskın olabilir.
+
+\end{document}

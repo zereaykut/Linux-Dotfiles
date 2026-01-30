@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 # This script provides a simple menu interface for managing a NetBird VPN connection
 # using Rofi. It allows the user to:

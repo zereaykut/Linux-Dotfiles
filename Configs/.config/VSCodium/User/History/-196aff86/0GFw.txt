@@ -1,0 +1,9 @@
+requests
+xarray
+dask 
+netCDF4 
+bottleneck
+cfgrib
+pandas
+numpy
+scipy

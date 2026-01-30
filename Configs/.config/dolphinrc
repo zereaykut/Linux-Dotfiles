@@ -1,5 +1,9 @@
 MenuBar=Disabled
 
+[ExtractDialog]
+1920x1080 screen: Window-Maximized=true
+DirHistory[$e]=$HOME/Manga/sousou-no-frieren/,$HOME/Manga/solo-leveling-ragnarok/,$HOME/Manga/solo-leveling/,$HOME/Manga/onepunch-man/,$HOME/Manga/kaiju-no-8/
+
 [General]
 Version=202
 ViewPropsTimestamp=2024,4,24,15,5,37.474

@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# System - Scripts
+export DATA_PATH="$HOME/.local/share"
+export SOURCE_PATH="$DATA_PATH/bin"
+export CACHE_PATH="$HOME/.cache"
+export STATE_PATH="$$HOME/.local/state"
+export CONFIG_PATH="$HOME/.config"
+export WAYDOTS_PATH="$CONFIG_PATH/waydots"
+
+# Theming
+export ICONS_PATH="$HOME/.icons"
+export THEMES_PATH="$HOME/.themes"
+
+# WM & Desktop
+export HYPR_CONFIG_PATH="$CONFIG_PATH/hypr"
+export NIRI_CONFIG_PATH="$CONFIG_PATH/niri"
+
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"

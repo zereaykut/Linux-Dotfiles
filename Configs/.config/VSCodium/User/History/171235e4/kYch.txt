@@ -1,0 +1,42 @@
+01 - Accomodation - Permanent Temporary (Kalınacak Yer)
+    Otel Rezervasyon belgesi (kalınacak yer ayarlandığına dair)
+
+02 - Proof of Business
+    edevlet -> T.C. SOSYAL GÜVENLİK KURUMU SİGORTALI İŞE GİRİŞ BİLDİRGESİ
+    edevlet -> T.C. SOSYAL GÜVENLİK KURUMU BAŞKANLIĞI EMEKLİLİK HİZMETLERİ GENEL MÜDÜRLÜĞÜ
+    şirketten -> Son 3 ay bordrosu
+    şirketten -> izin dilekçesi/yazısı
+    şirketten -> FAALİYET BELGESİ (SİCİL KAYIT SURETİ)
+    şirketten -> Aktivite Belgesi (CERTIFICATE OF ACTIVITY (REGISTRATION FORM COPY))
+    şirketten -> İmza sirküleri
+    şirketten -> resmi gazete yazısı
+    şirketten -> VERGİ LEVHASI
+
+03 - Educational Evidence
+    bu kısım boş (okul ile alakalı)
+
+04 - Financial Evidence
+    bankadan -> hesap özeti
+
+05 - Passport Travel Document
+    pasaport taraması
+
+06 - Life Events
+    edevlet -> Nüfus kayıt örneği (çevirmen firmadan çevirttirilecek)
+
+07 - Medical Information
+    bu kısım boş (ciddi rahatsızlık var ise)
+
+08 - Other
+    Uçak bileti (gidiş dönüş alındığına dair belge)
+    tapu (çevirmen firmadan çevirttirilecek)
+    sağlık sigortası (hepiyiden yaptırılacak)
+    niyet mektubu (ingilizce olacak, kendinden 1 paragraf bahset, UK'de yapılacaklardan ve geri döneceğinden 1 paragraf bahset)
+    edevlet -> T.C. İÇİŞLERİ BAKANLIĞI Nüfus ve Vatandaşlık İşleri Genel Müdürlüğü YERLEŞİM YERİ VE DİĞER ADRES BELGESİ
+
+09 - Sponsors Employment
+    bu kısım boş (sponsor varsa doldurulan bir yer)
+
+10 - Proof of Application
+    checklis (vfs globalden alınan checklist, doldur tarat)
+

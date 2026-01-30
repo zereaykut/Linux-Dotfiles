@@ -1,0 +1,9 @@
+{
+    "temperature": {
+        "interval": 10,
+        "critical-threshold": 80,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", ""],
+        "tooltip": false,
+    },
+}

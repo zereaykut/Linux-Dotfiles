@@ -1,0 +1,514 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\title{Cloud Physics \& Precipitation -- Sample Solutions}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Q1 -- Latent Heating in an Updraft}
+
+Given:
+\[
+w = \SI{20}{\meter\per\second}, \quad
+\Delta q_v = 0.005 \,\si{\kilo\gram\per\kilo\gram}, \quad
+L = 2.5\times 10^6 \,\si{\joule\per\kilo\gram}, \quad
+c_p \approx 1004 \,\si{\joule\per\kilo\gram\per\kelvin}.
+\]
+
+Released latent heat per unit mass:
+\[
+\Delta Q = L \Delta q_v
+= 2.5\times 10^6 \times 0.005
+= 1.25\times 10^4 \,\si{\joule\per\kilo\gram}.
+\]
+
+Temperature increase:
+\[
+\Delta T = \frac{\Delta Q}{c_p}
+\simeq \frac{1.25\times 10^4}{1004}
+\approx \SI{12.4}{\kelvin}.
+\]
+
+If the condensation occurs over \SI{1}{\kilo\meter}, the time is
+\[
+\Delta t = \frac{\Delta z}{w}
+= \frac{1000}{20}
+= \SI{50}{\second},
+\]
+so the heating rate is
+\[
+\frac{\Delta T}{\Delta t} \approx
+\frac{12.4}{50} \approx \SI{0.25}{\kelvin\per\second}.
+\]
+
+\section*{Q2 -- Evaporative Cooling and Negative Buoyancy}
+
+Given:
+\[
+\Delta q_v = +0.008 \,\si{\kilo\gram\per\kilo\gram}.
+\]
+
+Evaporative cooling:
+\[
+\Delta T = -\frac{L \Delta q_v}{c_p}
+= -\frac{2.5\times 10^6 \times 0.008}{1004}
+\approx -\SI{20}{\kelvin}.
+\]
+
+Buoyancy (taking a typical environmental temperature
+\(T \approx \SI{300}{\kelvin}\)):
+\[
+B = g\,\frac{T' }{T_{\text{env}}}
+\approx 9.81 \,\frac{-20}{300}
+\approx -0.65 \,\si{\meter\per\second\squared}.
+\]
+
+\section*{Q3 -- Why \texorpdfstring{$\Gamma_m < \Gamma_d$}{Γm < Γd}?}
+
+Dry adiabatic lapse rate:
+\[
+\Gamma_d = \frac{g}{c_p} \approx
+\SI{9.8}{\kelvin\per\kilo\meter},
+\]
+arises from adiabatic expansion and cooling of unsaturated air.
+
+In saturated air, condensation releases latent heat, partially
+offsetting adiabatic cooling. Thus the temperature decreases more
+slowly with height:
+\[
+\Gamma_m \approx \SI{6}{\kelvin\per\kilo\meter}
+< \Gamma_d.
+\]
+
+\section*{Q4 -- CAPE with/without Virtual Temperature Correction}
+
+Parcel is warmer than environment by about
+\(\Delta T \approx \SI{8}{\kelvin}\) from the LCL up to \SI{500}{\hecto\pascal}
+(rough approximation).
+
+Buoyancy without virtual correction:
+\[
+B \approx g \frac{\Delta T}{T}
+\approx 9.81 \,\frac{8}{265}
+\approx 0.30 \,\si{\meter\per\second\squared},
+\]
+assuming a representative \(T \approx \SI{265}{\kelvin}\).
+
+If the LFC is around \(z \approx \SI{0.8}{\kilo\meter}\) and
+\SI{500}{\hecto\pascal} at \(z \approx \SI{5}{\kilo\meter}\),
+then \(\Delta z \approx \SI{4.2}{\kilo\meter}\).
+
+Approximate CAPE:
+\[
+\text{CAPE} \approx \overline{B}\,\Delta z
+\approx 0.30 \times 4200
+\approx 1.3\times 10^3 \,\si{\joule\per\kilo\gram}.
+\]
+
+Including virtual temperature correction with
+\(\Delta T_v \approx \SI{7}{\kelvin}\):
+\[
+B_v \approx 9.81 \,\frac{7}{265}
+\approx 0.26 \,\si{\meter\per\second\squared},
+\]
+\[
+\text{CAPE}_v \approx 0.26 \times 4200
+\approx 1.1\times 10^3 \,\si{\joule\per\kilo\gram}.
+\]
+
+\section*{Q5 -- CIN (Convective Inhibition)}
+
+Definition:
+\[
+\text{CIN} = -\int_{z_s}^{z_{\text{LFC}}}
+g\,\frac{T_{v,p} - T_{v,e}}{T_{v,e}}\,dz.
+\]
+
+If the environment is on average warmer than the parcel
+below the LFC (negative buoyancy), one may approximate
+\[
+\text{CIN} \approx |\overline{B}_{\text{neg}}|\,\Delta z.
+\]
+
+For a required lift of \(\Delta p \approx \SI{50}{\hecto\pascal}\),
+the corresponding depth is roughly
+\(\Delta z \sim 400\text{--}\SI{500}{\meter}\).
+Assuming \(|\overline{B}| \approx 0.1\,\si{\meter\per\second\squared}\):
+\[
+\text{CIN} \sim 0.1 \times 450
+\approx \SI{45}{\joule\per\kilo\gram}.
+\]
+
+\section*{Q6 -- Supersaturation Estimate}
+
+Given:
+\[
+z \approx \SI{10}{\kilo\meter}, \quad
+w = \SI{25}{\meter\per\second}, \quad
+\tau_{\text{cond}} = \SI{200}{\second}.
+\]
+
+Take a characteristic vertical distance
+\(\Delta z \approx \SI{1}{\kilo\meter}\):
+\[
+\tau_{\text{asc}} \approx \frac{\Delta z}{w}
+= \frac{1000}{25} = \SI{40}{\second}.
+\]
+
+A simple box model suggests:
+\[
+S \sim \frac{\tau_{\text{asc}}}{\tau_{\text{cond}}}
+= \frac{40}{200} = 0.2
+\;\Rightarrow\;
+S \approx 20\% .
+\]
+
+\section*{Q7 -- Boussinesq Approximation and Equations}
+
+Assume:
+\begin{itemize}
+  \item \(\rho = \rho_0(z) + \rho'\), with \(|\rho'| \ll \rho_0\),
+  \item \(\rho_0\) depends only on height \(z\),
+  \item flow is nearly incompressible: \(\nabla\cdot\mathbf{v} \approx 0\),
+  \item density variations only appear in the buoyancy term.
+\end{itemize}
+
+Start with the vertical momentum equation:
+\[
+\frac{Dw}{Dt} = -\frac{1}{\rho}\frac{\partial p}{\partial z} - g + \nu \nabla^2 w.
+\]
+
+Decompose:
+\[
+p = p_0(z) + p', \quad
+\rho = \rho_0(z) + \rho',
+\]
+with basic state hydrostatic balance:
+\[
+\frac{\partial p_0}{\partial z} = -\rho_0 g.
+\]
+
+Subtract the basic state:
+\[
+\frac{Dw}{Dt} =
+-\frac{1}{\rho_0}\frac{\partial p'}{\partial z}
++ g\frac{\rho'}{\rho_0}
++ \nu \nabla^2 w.
+\]
+
+Relate density and potential temperature perturbations:
+\[
+\frac{\rho'}{\rho_0}
+\approx -\frac{\theta'}{\theta_0},
+\quad
+B = g\frac{\theta'}{\theta_0}.
+\]
+
+Hence the Boussinesq momentum and continuity equations:
+\begin{align*}
+\frac{D\mathbf{v}}{Dt}
+&= -\frac{1}{\rho_0}\nabla p'
+   + B\,\hat{\mathbf{k}}
+   + \nu \nabla^2\mathbf{v},\\
+\nabla\cdot\mathbf{v} &= 0.
+\end{align*}
+
+\section*{Q8 -- Moist Adiabatic Lapse Rate}
+
+One standard result for the moist adiabatic lapse rate is:
+\[
+\Gamma_m
+= \Gamma_d
+\frac{1 + \dfrac{L q_v}{R_d T}}
+     {1 + \dfrac{L^2 q_v}{c_p R_v T^2}},
+\]
+where
+\(\Gamma_d = g/c_p\),
+\(q_v\) is the (saturated) mixing ratio, \(R_d\) is the gas constant
+for dry air, and \(R_v\) for water vapor.
+
+Sketch of derivation:
+\begin{itemize}
+  \item Use the first law of thermodynamics for a saturated parcel
+        with condensation:
+        \[
+        c_p dT - L \,dq_s = -\alpha\,dp,
+        \]
+        with \(q_s(T,p)\) the saturation mixing ratio.
+  \item Combine with hydrostatic balance
+        \(\mathrm{d}p/\mathrm{d}z = -\rho g\) and the ideal gas law.
+  \item Express \(dq_s\) in terms of \(dT\) and \(dp\).
+  \item Manipulate algebraically to obtain the expression above.
+\end{itemize}
+
+\section*{Q9 -- Max Updraft from CAPE}
+
+Given CAPE:
+\[
+\text{CAPE} = \SI{3000}{\joule\per\kilo\gram}.
+\]
+
+Parcel theory approximation:
+\[
+w_{\max} \approx \sqrt{2\,\text{CAPE}}
+= \sqrt{2\times 3000}
+= \sqrt{6000}
+\approx \SI{77.5}{\meter\per\second}.
+\]
+
+\section*{Q10 -- Tilting of Streamwise Vorticity}
+
+Given:
+\[
+\eta = 0.015 \,\si{\per\second},
+\quad
+S = 0.02 \,\si{\per\second}.
+\]
+
+Tilting contribution to vertical vorticity:
+\[
+\left(\frac{d\omega}{dt}\right)_{\text{tilt}}
+\sim \eta S
+= 0.015 \times 0.02
+= 3\times 10^{-4} \,\si{\per\second\squared}.
+\]
+
+Over a characteristic time
+\(t \sim \SI{100}{\second}\):
+\[
+\omega \sim
+\left(\frac{d\omega}{dt}\right)t
+\approx 3\times 10^{-4} \times 100
+= 0.03 \,\si{\per\second}.
+\]
+
+\section*{Q11 -- Negative Buoyancy and Surface Winds}
+
+Given:
+\[
+T_p = -5^\circ\text{C} = \SI{268}{\kelvin},\quad
+T_e = 2^\circ\text{C} = \SI{275}{\kelvin}.
+\]
+
+Temperature difference:
+\[
+\Delta T = T_p - T_e = -7\,\si{\kelvin}.
+\]
+
+Buoyancy:
+\[
+B = g\,\frac{T_p - T_e}{T_e}
+\approx 9.81 \frac{-7}{275}
+\approx -0.25 \,\si{\meter\per\second\squared}.
+\]
+
+If the descending cold air has depth \(\Delta z\):
+\[
+\text{DCAPE} \sim |B|\,\Delta z.
+\]
+For \(\Delta z \approx \SI{3}{\kilo\meter}\):
+\[
+\text{DCAPE} \sim 0.25\times 3000
+\approx 750 \,\si{\joule\per\kilo\gram}.
+\]
+Maximum downdraft speed:
+\[
+w_{\max} \sim \sqrt{2\,\text{DCAPE}}
+\approx \sqrt{1500}
+\approx \SI{39}{\meter\per\second}.
+\]
+
+Such a downdraft spreading horizontally at the surface can produce
+surface winds on the order of \(30\text{--}\SI{40}{\meter\per\second}\).
+
+\section*{Q12 -- Pressure Perturbation from Vorticity}
+
+Given:
+\[
+\omega = 0.04 \,\si{\per\second},\quad
+R = \SI{2}{\kilo\meter} = 2000\,\si{\meter}.
+\]
+
+For solid-body rotation,
+\[
+\zeta = 2\Omega = \omega
+\quad\Rightarrow\quad
+\Omega = \frac{\omega}{2} = 0.02 \,\si{\per\second}.
+\]
+
+Tangential velocity at radius \(R\):
+\[
+v(R) = \Omega R = 0.02 \times 2000
+= \SI{40}{\meter\per\second}.
+\]
+
+Cyclostrophic balance:
+\[
+\frac{v^2}{R}
+= \frac{1}{\rho}\frac{\partial p'}{\partial r}.
+\]
+
+For solid-body rotation:
+\[
+\frac{\partial p'}{\partial r}
+= \rho\,\Omega^2 r.
+\]
+
+Pressure difference from center to radius \(R\):
+\[
+\Delta p = p(0) - p(R)
+= \int_0^R \rho \Omega^2 r \, dr
+= \frac{1}{2}\rho\Omega^2 R^2.
+\]
+
+Assume \(\rho \approx \SI{1}{\kilo\gram\per\meter^3}\):
+\[
+\Delta p = \frac{1}{2}\times 1 \times
+(0.02)^2 \times (2000)^2
+= 0.5 \times 4\times 10^{-4} \times 4\times 10^6
+= 800\,\si{\pascal}
+\approx 8\,\si{\hecto\pascal}.
+\]
+
+\section*{Q13 -- Why the Right-Mover Deviates from the Mean Wind}
+
+In an environment with strong vertical wind shear and positive
+storm-relative helicity, the updraft tilts horizontal vorticity
+into the vertical, creating a mesocyclone (cyclonic vertical vorticity).
+
+The associated dynamic pressure perturbation (low pressure in the
+updraft core) pulls the storm toward the right of the shear vector,
+so the right-moving supercell deviates significantly from the
+mean wind.
+
+\section*{Q14 -- Straight vs Curved Hodograph and Supercells}
+
+\begin{itemize}
+  \item \textbf{Straight-line hodograph:} shear is symmetric; splitting storms
+        can produce both right- and left-movers, often with similar potential
+        intensity.
+  \item \textbf{Clockwise-curved hodograph (NH):} storm-relative helicity is
+        strongly positive for right-movers, favoring long-lived, dominant
+        cyclonic supercells.
+\end{itemize}
+
+Thus, a clockwise-curved hodograph is most favorable for
+classical, long-lived right-moving supercells.
+
+\section*{Q15 -- Curvature and Saturation Vapor Pressure (Kelvin Effect)}
+
+Surface tension causes a pressure difference across a curved
+liquid interface:
+\[
+p_\text{inside} - p_\text{outside} = \frac{2\sigma}{r},
+\]
+where \(\sigma\) is surface tension and \(r\) the droplet radius.
+
+This raises the chemical potential of the liquid, so
+the equilibrium vapor pressure over a curved surface
+is greater than over a flat surface. The Kelvin equation:
+\[
+e_s(r) = e_s(\infty)\,
+\exp\left(\frac{2\sigma}{\rho_w R_v T}\frac{1}{r}\right),
+\]
+or
+\[
+\ln\frac{e_s(r)}{e_s(\infty)}
+= \frac{2\sigma}{\rho_w R_v T}\,\frac{1}{r}.
+\]
+
+As \(r\) decreases, \(e_s(r)\) increases.
+
+\section*{Q16 -- Köhler Theory for a Tiny NaCl Particle (Concept)}
+
+Köhler equation (one common form):
+\[
+S(r) = \frac{e(r)}{e_s(\infty)}
+= a_w(r)\,\exp\left(\frac{A}{r}\right),
+\]
+which is often written as
+\[
+\ln S = \frac{A}{r} - \frac{B}{r^3},
+\]
+where
+\[
+A = \frac{2\sigma}{\rho_w R_v T}
+\]
+(Kelvin term), and
+\[
+B \propto n_s
+\]
+(Raoult term, with \(n_s\) the moles of solute; for NaCl,
+van 't Hoff factor \(i \approx 2\)).
+
+The critical radius and supersaturation:
+\[
+\frac{d(\ln S)}{dr} = 0
+\quad\Rightarrow\quad
+-\frac{A}{r_c^2}
++ \frac{3B}{r_c^4} = 0
+\quad\Rightarrow\quad
+r_c = \left(\frac{3B}{A}\right)^{1/2},
+\]
+\[
+S_c = \exp\left(\frac{A}{r_c} - \frac{B}{r_c^3}\right).
+\]
+
+For an extremely small NaCl mass (here
+\(\sim 10^{-16}\,\si{\gram}\)), \(B\) is very small;
+thus \(r_c\) is near the dry radius and
+\(S_c\) is very large (supersaturation well above a few percent,
+possibly $>100\%$). Such a tiny particle is not an efficient CCN
+in typical atmospheric conditions.
+
+\section*{Q17 -- Bergeron Process at \texorpdfstring{$-15^\circ$C}{-15°C}}
+
+At \(-15^\circ\text{C}\), the saturation vapor pressure over water
+\(e_{sw}\) is larger than that over ice \(e_{si}\). Typical values:
+\[
+e_{sw}(-15^\circ\text{C}) \approx 1.9 \,\si{\hecto\pascal},\quad
+e_{si}(-15^\circ\text{C}) \approx 1.4 \,\si{\hecto\pascal},
+\]
+so
+\[
+\frac{e_{sw}}{e_{si}} \sim 1.3.
+\]
+
+If the environment is saturated with respect to liquid water
+(\(e \approx e_{sw}\)), then it is supersaturated with respect to ice:
+\[
+S_i \approx \frac{e}{e_{si}}
+\approx \frac{e_{sw}}{e_{si}}
+\sim 1.3,
+\]
+i.e.\ about 30\,\% supersaturated relative to ice.
+
+Thus, ice crystals grow rapidly by vapor deposition, while liquid
+droplets tend to evaporate: the Bergeron process favors ice growth.
+
+\section*{Q18 -- CAPE vs Dynamic Pressure in a Supercell Updraft}
+
+\begin{itemize}
+  \item \textbf{Buoyancy (CAPE):} provides thermal energy; large CAPE
+        gives a large potential max updraft
+        \(w_{\max} \sim \sqrt{2\,\text{CAPE}}\).
+  \item \textbf{Dynamic pressure perturbations:} arise from strong
+        vertical shear and mesocyclone rotation. Negative pressure
+        perturbations in the updraft core enhance vertical acceleration
+        and can be comparable to or even exceed buoyancy locally.
+\end{itemize}
+
+In many strong supercells, the updraft is maintained by
+a combination of buoyancy and dynamic (pressure-gradient)
+forcing; in the updraft core, dynamic pressure forces can
+be as important as buoyancy, or sometimes dominant.
+
+\end{document}

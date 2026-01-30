@@ -1,0 +1,32 @@
+{
+    "battery": {
+    "bat": "BAT1",
+    "adapter": "ADP0",
+    "interval": 60,
+    "states": {
+        "warning": 35,
+        "critical": 20
+    },
+    "on-click": "power_profiles.sh", 
+    "max-length": 25,
+    "format": "{icon} {capacity}%",
+    "format-warning": "{icon} {capacity}%",
+    "format-critical": "{icon} {capacity}%",
+    "format-charging": "<span font-family='Font Awesome 6 Free'></span> {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-full": "  {capacity}%",
+    "format-icons": [
+        "󰛞 󱢠 󱢠 󱢠 󱢠 ",
+        "󰣐 󱢠 󱢠 󱢠 󱢠 ",
+        "󰣐 󰛞 󱢠 󱢠 󱢠 ",
+        "󰣐 󰣐 󱢠 󱢠 󱢠 ",
+        "󰣐 󰣐 󰛞 󱢠 󱢠 ",
+        "󰣐 󰣐 󰣐 󱢠 󱢠 ",
+        "󰣐 󰣐 󰣐 󰛞 󱢠 ",
+        "󰣐 󰣐 󰣐 󰣐 󱢠 ",
+        "󰣐 󰣐 󰣐 󰣐 󰛞 ",
+        "󰣐 󰣐 󰣐 󰣐 󰣐 "
+        ],
+    },
+}

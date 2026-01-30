@@ -1,0 +1,6 @@
+{
+    "bluetooth": {
+        "format": " {status}",
+        "on-click": "blueman-manager"
+    },
+}

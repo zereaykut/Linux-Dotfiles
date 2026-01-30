@@ -1,0 +1,14 @@
+{
+    "git.autofetch": false,
+    "window.menuBarVisibility": "toggle",
+    "editor.minimap.side": "right",
+    "workbench.sideBar.location": "left",
+    "security.workspace.trust.untrustedFiles": "newWindow",
+    "security.workspace.trust.startupPrompt": "never",
+    "security.workspace.trust.enabled": false,
+    "terminal.external.linuxExec": "kitty",
+    "terminal.explorerKind": "both",
+    "terminal.sourceControlRepositoriesKind": "both",
+    "extensions.autoUpdate": false,
+    "telemetry.telemetryLevel": "off"
+}

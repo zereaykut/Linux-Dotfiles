@@ -4,6 +4,9 @@ TerminalApplication=kitty
 [Icons]
 Theme=Tela-Circle-Pink
 
+[UiSettings]
+ColorScheme=Rosé-Pine
+
 [KDE]
 ShowDeleteCommand=false
 

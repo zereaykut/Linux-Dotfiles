@@ -1,0 +1,217 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+% Page geometry settings
+\geometry{
+    left=25mm,
+    right=25mm,
+    top=25mm,
+    bottom=25mm
+}
+
+\title{\textbf{Cloud Dynamics and Physics: Detailed Solutions}}
+\author{Course: Cloud Dynamics Physics}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Part 1: Thermodynamics and Parcel Theory}
+
+\subsection*{Q1: Updraft Warming Calculation}
+\textbf{Question:} Updraft $w=20\,\text{m/s}$ condenses $\Delta q_{L}v=0.005\,\text{kg/kg}$ over 1 km. $L=2.5\times10^{6}\,\text{J/kg}$. Calculate $\Delta T$ warming.
+
+\textbf{Solution:}
+This problem uses the First Law of Thermodynamics, specifically the conservation of energy during phase change. The latent heat released by condensation warms the air parcel.
+
+\begin{itemize}
+    \item Latent heat of vaporization ($L$) = $2.5 \times 10^6\,\text{J/kg}$
+    \item Mass of condensed water ($\Delta q$) = $0.005\,\text{kg/kg}$
+    \item Specific heat of air ($C_p$) $\approx 1004\,\text{J/(kg}\cdot\text{K)}$
+\end{itemize}
+
+Using the formula $C_p \Delta T = L \Delta q$:
+\begin{align*}
+    \Delta T &= \frac{L \cdot \Delta q}{C_p} \\
+    \Delta T &= \frac{(2.5 \times 10^6) \cdot (0.005)}{1004} \\
+    \Delta T &= \frac{12,500}{1004} \\
+    \Delta T &\approx \mathbf{12.45\,^\circ\text{C}}
+\end{align*}
+
+\subsection*{Q2: Evaporative Cooling and Negative Buoyancy}
+\textbf{Question:} Rain evaporates into dry air: $\Delta q_{L}v=+0.008\,\text{kg/kg}.$ Calculate negative buoyancy $B\,(\text{m/s}^{2})$.
+
+\textbf{Solution:}
+Evaporation absorbs latent heat, cooling the parcel ($T_p$) relative to the environment ($T_{env}$).
+
+1. \textbf{Calculate Cooling ($\Delta T$):}
+\begin{align*}
+    \Delta T &= -\frac{L \cdot \Delta q}{C_p} \\
+    \Delta T &= -\frac{(2.5 \times 10^6) \cdot (0.008)}{1004} \approx -19.92\,\text{K}
+\end{align*}
+
+2. \textbf{Calculate Buoyancy ($B$):}
+Assuming $T_{env} \approx 300\,\text{K}$ and $g \approx 9.8\,\text{m/s}^2$:
+\begin{align*}
+    B &\approx g \frac{T_p - T_{env}}{T_{env}} = g \frac{\Delta T}{T_{env}} \\
+    B &\approx 9.8 \cdot \frac{-19.92}{300} \\
+    B &\approx \mathbf{-0.65\,\text{m/s}^2}
+\end{align*}
+
+\subsection*{Q3: Moist vs. Dry Adiabatic Lapse Rate}
+\textbf{Question:} At $T=0^{\circ}\text{C}$, saturated ascent. Why $\Gamma_m=6\,\text{K/km}$ vs $\Gamma_{dry}=9.8\,\text{K/km}$?
+
+\textbf{Answer:}
+The dry adiabatic lapse rate ($\Gamma_d \approx 9.8\,\text{K/km}$) represents cooling due purely to expansion. The moist adiabatic lapse rate ($\Gamma_m$) is smaller because \textbf{latent heat release opposes the expansion cooling}.
+As a saturated parcel rises, water vapor condenses, releasing latent heat ($L_v$). This adds thermal energy to the parcel, partially offsetting the adiabatic cooling. At $0^\circ\text{C}$, this heat release is sufficient to reduce the cooling rate to approximately $6\,\text{K/km}$.
+
+\subsection*{Q4: CAPE with Virtual Temperature Correction}
+\textbf{Question:} Calculate CAPE with virtual temperature correction using $\Delta T_v=7\text{K}$ (vs $\Delta T=6\text{K}$).
+
+\textbf{Solution:}
+CAPE is the integrated buoyancy. Virtual temperature ($T_v$) accounts for moist air being less dense than dry air.
+\begin{itemize}
+    \item Standard buoyancy: $B \propto \Delta T = 6\,\text{K}$
+    \item Virtual buoyancy: $B_v \propto \Delta T_v = 7\,\text{K}$
+\end{itemize}
+Using the approximation $B \approx g \frac{\Delta T}{T}$:
+\begin{align*}
+    B_{raw} &\approx 9.8 \frac{6}{263} \approx 0.22\,\text{m/s}^2 \\
+    B_{virtual} &\approx 9.8 \frac{7}{263} \approx 0.26\,\text{m/s}^2
+\end{align*}
+Using $\Delta T_v$ results in approximately \textbf{16.6\% more energy}. If integrated over a depth $H=5000\,\text{m}$:
+\[ \text{CAPE} \approx B_{virtual} \times H \approx 0.26 \times 5000 = \mathbf{1300\,\text{J/kg}} \]
+
+\subsection*{Q5: Convective Inhibition (CIN)}
+\textbf{Question:} Surface $\theta_e=355\text{K}$ to LFC (50 hPa lift). Calculate inhibition.
+
+\textbf{Solution:}
+CIN is the work required to lift the parcel against negative buoyancy.
+\[ \text{CIN} = \int_{sfc}^{LFC} g \frac{T_{env} - T_{parcel}}{T_{env}} dz \]
+Given a 50 hPa lift (approx 500 m) and assuming a mean negative buoyancy $\Delta T \approx -1\,\text{K}$:
+\[ \text{CIN} \approx g \frac{|\Delta T|}{T} \Delta z \approx 9.8 \cdot \frac{1}{300} \cdot 500 \approx \mathbf{16\,\text{J/kg}} \]
+
+\subsection*{Q6: Supersaturation}
+\textbf{Question:} At 10 km height $w=25\,\text{m/s},$ condensation timescale $t_{cond}=200\text{s}.$ Calculate \% supersaturation (ratio of timescales).
+
+\textbf{Solution:}
+Supersaturation is controlled by the ratio of the phase relaxation timescale ($\tau_{cond}$) to the dynamical cooling timescale ($\tau_{dyn}$).
+\begin{itemize}
+    \item $\tau_{cond} = 200\,\text{s}$
+    \item $\tau_{dyn} \approx \frac{H}{w} = \frac{8000\,\text{m}}{25\,\text{m/s}} = 320\,\text{s}$
+\end{itemize}
+\[ \text{Ratio} = \frac{\tau_{cond}}{\tau_{dyn}} = \frac{200}{320} = \mathbf{0.625 \,\, (62.5\%)} \]
+
+\section*{Part 2: Dynamics and Derivations}
+
+\subsection*{Q7: Boussinesq Approximation}
+\textbf{Question:} Why use Boussinesq approximation in cloud models? Derive simplified form.
+
+\textbf{Answer:}
+\textbf{Why:} It simplifies the Navier-Stokes equations by ignoring density variations except in the buoyancy term. Valid when vertical scales are smaller than density scale height.
+
+\textbf{Derivation:}
+Start with vertical momentum: $\frac{dw}{dt} = -\frac{1}{\rho}\frac{\partial p}{\partial z} - g$.
+Let $\rho = \rho_0 + \rho'$ and $p = p_0 + p'$, with hydrostatic base state $\partial p_0 / \partial z = -\rho_0 g$.
+\[ \frac{dw}{dt} = -\frac{1}{\rho_0(1+\rho'/\rho_0)} \frac{\partial(p_0+p')}{\partial z} - g \]
+Using $(1+x)^{-1} \approx 1-x$:
+\[ \frac{dw}{dt} \approx -\frac{1}{\rho_0}\frac{\partial p'}{\partial z} + B, \quad \text{where } B = -g\frac{\rho'}{\rho_0} \]
+
+\subsection*{Q8: Derive Moist Adiabatic Lapse Rate}
+\textbf{Derivation:}
+1. First Law: $C_p dT + g dz + L dq_s = 0$.
+2. Clausius-Clapeyron approx: $dq_s \approx \frac{q_s L}{R_v T^2} dT$.
+3. Substitute:
+\[ C_p dT + g dz + \frac{L^2 q_s}{R_v T^2} dT = 0 \]
+4. Group terms and solve for $\Gamma_m = -dT/dz$:
+\[ \Gamma_m = \frac{g}{C_p} \left[ \frac{1 + \frac{L q_s}{R_d T}}{1 + \frac{L^2 q_s}{C_p R_v T^2}} \right] \]
+
+\subsection*{Q9: Maximum Updraft Velocity}
+\textbf{Question:} $\text{CAPE}=3000\,\text{J/kg}$. Calculate $w_{max}$.
+
+\textbf{Solution:}
+\[ w_{max} = \sqrt{2 \cdot \text{CAPE}} = \sqrt{2 \cdot 3000} = \sqrt{6000} \approx \mathbf{77.46\,\text{m/s}} \]
+
+\subsection*{Q10: Streamwise Vorticity}
+\textbf{Question:} Streamwise vorticity $\eta=0.015\,\text{s}^{-1}$ updraft stretch $S=0.02\,\text{s}^{-1}$. Vertical $\omega=?$
+
+\textbf{Solution:}
+Vertical vorticity ($\zeta$) is generated by tilting streamwise vorticity.
+\[ \text{Rate} \approx \eta \cdot S_{tilting} \approx 0.015 \times 0.02 = 0.0003\,\text{s}^{-2} \]
+Physically, the updraft converts the streamwise component into vertical rotation. Initially, $\zeta \approx \eta = \mathbf{0.015\,\text{s}^{-1}}$.
+
+\section*{Part 3: Thunderstorm Dynamics}
+
+\subsection*{Q11: Downburst Calculation}
+\textbf{Question:} Calculate negative Buoyancy and surface wind for $T_p=-5^{\circ}\text{C}$, $\Gamma_{env}=2^{\circ}\text{C}$.
+
+\textbf{Solution:}
+1. \textbf{Buoyancy:} $\Delta T = -5 - 2 = -7\,\text{K}$.
+\[ B = 9.8 \frac{-7}{290} \approx -0.24\,\text{m/s}^2 \]
+2. \textbf{Wind Speed:} Using Bernoulli for a drop of $H=1000\,\text{m}$:
+\[ V = \sqrt{2 |B| H} = \sqrt{2 \cdot 0.24 \cdot 1000} \approx \mathbf{21.9\,\text{m/s}} \]
+
+\subsection*{Q12: Cyclostrophic Balance}
+\textbf{Question:} $\omega=0.04\,\text{s}^{-1}$, $r=2\,\text{km}$. $P'$ perturbation?
+
+\textbf{Solution:}
+Using cyclostrophic balance $|\Delta P| \approx \rho (\omega r)^2$:
+\[ v = \omega r = 0.04 \times 2000 = 80\,\text{m/s} \]
+\[ \Delta P \approx 1.0 \times (80)^2 = 6400\,\text{Pa} = \mathbf{64\,\text{hPa}} \]
+
+\subsection*{Q13: Supercell Propagation}
+\textbf{Question:} Why does right-mover deviate from mean wind?
+
+\textbf{Answer:}
+Deviates due to \textbf{vertical non-hydrostatic pressure gradients}. The rotating updraft interacts with shear to create dynamic low pressure on the flank, forcing propagation to the right (in NH) to access new inflow.
+
+\subsection*{Q14: Hodographs}
+\textbf{Question:} Which favors supercells: straight vs curved hodograph?
+
+\textbf{Answer:}
+\textbf{Curved hodographs} favor supercells because they generate \textbf{streamwise vorticity} (rotation parallel to inflow), which is tilted into a rotating updraft.
+
+\section*{Part 4: Microphysics}
+
+\subsection*{Q15: Curvature Effect (Kelvin Equation)}
+\textbf{Question:} Why does curvature increase vapor pressure? Derive.
+
+\textbf{Answer:}
+Surface tension creates inward pressure on a droplet, forcing molecules to escape more easily.
+\[ \ln\left(\frac{e_r}{e_s}\right) = \frac{2\sigma}{r \rho_L R_v T} \]
+
+\subsection*{Q16: Köhler Theory}
+\textbf{Question:} Calculate Critical Supersaturation ($S_c$) for NaCl ($10^{-16}\,\text{g}$).
+
+\textbf{Solution:}
+Using $S_c \approx \sqrt{4 A^3 / 27 B}$:
+\begin{itemize}
+    \item $A \approx 3.3 \times 10^{-7}\,\text{m}$
+    \item $B \approx 1.47 \times 10^{-23}\,\text{m}^3$ (derived from mass)
+\end{itemize}
+\[ S_c \approx \sqrt{\frac{4 (3.3 \times 10^{-7})^3}{27 (1.47 \times 10^{-23})}} \approx \mathbf{0.18\%} \]
+
+\subsection*{Q17: Bergeron Process}
+\textbf{Question:} Calculate ice growth vs liquid at $-15^{\circ}\text{C}$.
+
+\textbf{Answer:}
+At $-15^\circ\text{C}$, the vapor pressure difference between water and ice is maximized ($\Delta e \approx 0.26\,\text{hPa}$). Ice grows rapidly by deposition while liquid droplets evaporate.
+
+\subsection*{Q18: Supercell Updraft Forcing}
+\textbf{Question:} Which dominates: buoyancy (CAPE) vs dynamic $P'$?
+
+\textbf{Answer:}
+\begin{itemize}
+    \item \textbf{Dynamic $P'$:} Dominates \textbf{low levels}, lifting air through CIN.
+    \item \textbf{Buoyancy:} Dominates \textbf{mid-to-upper levels}, driving max velocity.
+\end{itemize}
+
+\end{document}

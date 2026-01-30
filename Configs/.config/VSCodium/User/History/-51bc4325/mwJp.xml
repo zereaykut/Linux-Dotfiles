@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkMenu" id="menu">
+	<child>
+		<object class="GtkMenuItem" id="power">
+			<property name="label">󰅶 Caffeine Activate</property>
+        </object>
+	</child>
+	<child>
+        <object class="GtkMenuItem" id="power-profiles">
+			<property name="label">󰛊 Caffeine Deactivate</property>
+        </object>
+	</child>
+	<child>
+        <object class="GtkMenuItem" id="osd-scripts">
+			<property name="label">󰛊 Caffeine Deactivate</property>
+        </object>
+	</child>
+  </object>
+</interface>

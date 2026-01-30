@@ -1,0 +1,10 @@
+{
+    "disk": {
+        "interval": 5,
+        "unit": "GB",
+        "path": "/",
+        "format": " {percentage_used:2}%",
+        "tooltip": true,
+        "tooltip-format": "Free: {free:2} GB / {percentage_free:2}%\nUsed: {used} GB / {percentage_used:2}%"
+    },
+}

@@ -1,0 +1,39 @@
+2025-12-23 20:33:43.863 [info] Started local extension host with pid 14506.
+2025-12-23 20:33:44.491 [error] Canceled: Canceled
+    at uC (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:7:1444)
+    at vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:3866:48461
+    at Array.forEach (<anonymous>)
+    at yRt.dispose (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:3866:48367)
+    at vAe.dispose (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:3866:62660)
+    at RSn.dispose (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:3873:10474)
+    at TSn.stopAllInReverse (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:3873:9608)
+    at async e0t._doStopExtensionHosts (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:3872:21480)
+2025-12-23 20:33:44.492 [error] Canceled: Canceled
+    at uC (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:7:1444)
+    at vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:3866:48461
+    at Array.forEach (<anonymous>)
+    at yRt.dispose (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:3866:48367)
+    at vAe.dispose (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:3866:62660)
+    at RSn.dispose (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:3873:10474)
+    at TSn.stopAllInReverse (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:3873:9608)
+    at async e0t._doStopExtensionHosts (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:3872:21480)
+2025-12-23 20:33:44.492 [error] Canceled: Canceled
+    at uC (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:7:1444)
+    at vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:3866:48461
+    at Array.forEach (<anonymous>)
+    at yRt.dispose (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:3866:48367)
+    at vAe.dispose (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:3866:62660)
+    at RSn.dispose (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:3873:10474)
+    at TSn.stopAllInReverse (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:3873:9608)
+    at async e0t._doStopExtensionHosts (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:3872:21480)
+2025-12-23 20:33:44.492 [error] Canceled: Canceled
+    at new uSn (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:3866:46574)
+    at yRt._remoteCall (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:3866:52910)
+    at n.<computed>.o.charCodeAt.n.<computed> (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:3866:49660)
+    at Zsi.getSessions (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:597:85005)
+    at $Ge.getSessions (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:597:81659)
+    at $Ge.getAccounts (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:597:80887)
+    at HGe._addExtensionsToCache (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:597:74028)
+    at Object.factory (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:597:73069)
+    at J_.consume (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:30:77696)
+    at J_.consumed (vscode-file://vscode-app/opt/vscodium-bin/resources/app/out/vs/workbench/workbench.desktop.main.js:30:77905)

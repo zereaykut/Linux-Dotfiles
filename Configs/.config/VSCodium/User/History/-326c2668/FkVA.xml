@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkMenu" id="menu">
+	<child>
+		<object class="GtkMenuItem" id="activate">
+			<property name="label"> Activate</property>
+        </object>
+	</child>
+	<child>
+        <object class="GtkMenuItem" id="deactivate">
+			<property name="label"> Deactivate</property>
+        </object>
+	</child>
+  </object>
+</interface>

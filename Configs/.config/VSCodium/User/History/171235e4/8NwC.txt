@@ -1,0 +1,10 @@
+01 - Accomodation - Permanent Temporary (Kalınacak Yer)
+    Otel Rezervasyon belgesi
+02 - Proof of Business
+    edevlet -> T.C. SOSYAL GÜVENLİK KURUMU SİGORTALI İŞE GİRİŞ BİLDİRGESİ
+    şirketten -> Son 3 ay bordrosu
+    şirketten -> izin dilekçesi/yazısı
+    şirketten -> FAALİYET BELGESİ (SİCİL KAYIT SURETİ)
+    şirketten -> Aktivite Belgesi (CERTIFICATE OF ACTIVITY (REGISTRATION FORM COPY))
+    şirketten -> İmza sirküleri
+    

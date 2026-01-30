@@ -1,0 +1,39 @@
+{
+    "custom/global-menu": {
+        "format" : "󰍜",
+        // "exec": "~/.config/waybar/scripts/global_menu.sh",
+        "tooltip": false,
+        // "exec-if": "exit 0",
+        // "return-type": "json",
+        "menu": "on-click",
+        "menu-file": "~/.config/waybar/menus/global_menu.xml",
+        "menu-actions": {
+            // Power Actions
+            "shutdown": "systemctl poweroff",
+            "restart": "systemctl reboot",
+            "logout": "loginctl terminate-user $USER",
+
+            // Power Profiles
+            "performance": "powerprofilesctl set performance",
+            "balanced": "powerprofilesctl set balanced",
+            "power-saver": "powerprofilesctl set power-saver",
+
+            // Daemon Scripts
+            "osd": "start-osd.sh",
+            "topbar": "start-top-bar.sh",
+            "notification": "start-notification-daemon.sh",
+            "wallpaper": "start-wallpaper-daemon.sh",
+
+            // Theme Actions
+            "theme-select": "theme-select.sh",
+            "wallpaper-select": "wall-select.sh", 
+            "sddm-theme-select": "theme-select-sddm.sh",
+
+            // Scripts Actions
+            "app-launcher": "~/.local/share/bin/launcher.sh 1",
+            "app-launcher-big": "~/.local/share/bin/launcher.sh 2",
+            "clipboard": "~/.local/share/bin/clip_manager.sh",
+            "tab-menu": "~/.local/share/bin/hyprland_window_switcher.py",
+        }
+    },
+}

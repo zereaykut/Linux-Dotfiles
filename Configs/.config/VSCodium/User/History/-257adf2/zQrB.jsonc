@@ -1,0 +1,17 @@
+{
+    "custom/power-profiles-daemon": {
+        "format" : "{}",
+        "exec": "~/.config/waybar/scripts/power_profiles_status.sh",
+        "interval": 1,
+        "tooltip": true,
+        "exec-if": "exit 0",
+        "return-type": "json",
+        "menu": "on-click",
+        "menu-file": "~/.config/waybar/menus/power_profiles.xml",
+        "menu-actions": {
+            "performance": "powerprofilesctl set performance",
+            "balanced": "powerprofilesctl set balanced",
+            "power-saver": "powerprofilesctl set power-saver"
+                },
+    },
+}

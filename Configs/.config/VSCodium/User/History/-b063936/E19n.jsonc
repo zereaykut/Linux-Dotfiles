@@ -1,0 +1,39 @@
+{
+    "custom/global-menu": {
+        "format" : "󰍜",
+        // "exec": "~/.config/waybar/scripts/global_menu.sh",
+        "tooltip": false,
+        "exec-if": "exit 0",
+        "return-type": "json",
+        "menu": "on-click",
+        "menu-file": "~/.config/waybar/menus/global_menu.xml",
+        "menu-actions": {
+            // Power Actions
+            "shutdown": "systemctl poweroff",
+            "restart": "systemctl reboot",
+            "logout": "loginctl terminate-user $USER",
+
+            // Power Profiles
+            "performance": "powerprofilesctl set performance",
+            "balanced": "powerprofilesctl set balanced",
+            "power-saver": "powerprofilesctl set power-saver",
+
+            // Daemon Scripts
+            "osd": "~/.local/share/bin/launch_osd.sh",
+            "topbar": "~/.local/share/bin/launch_top_bar.sh",
+            "notification": "~/.local/share/bin/launch_notification_daemon.sh",
+            "wallpaper": "~/.local/share/bin/launch_wallpaper_daemon.sh",
+
+            // Theme Actions
+            "theme-select": "~/.local/share/bin/theme_select.sh",
+            "wallpaper-select": "~/.local/share/bin/wall_select.sh", 
+            "sddm-theme-select": "~/.local/share/bin/theme_select_sddm.sh",
+
+            // Scripts Actions
+            "osd": "~/.local/share/bin/launch_osd.sh",
+            "topbar": "~/.local/share/bin/launch_top_bar.sh",
+            "notification": "~/.local/share/bin/launch_notification_daemon.sh",
+            "wallpaper": "~/.local/share/bin/launch_wallpaper_daemon.sh",
+        }
+    },
+}

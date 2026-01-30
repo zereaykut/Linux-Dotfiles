@@ -1,0 +1,12 @@
+{
+    "custom/system-updates": {
+        "format": "{}",
+        "tooltip": true,
+        "interval": 3600,                     // every hour
+        "exec": "check_updates.sh",
+        "exec-if": "exit 0",                  // always run; consider advanced run conditions
+        "on-click": "kitty -e system_updates.sh",
+        "return-type": "json",
+        "signal": 20,
+    },
+}

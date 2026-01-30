@@ -1,0 +1,146 @@
+#!/usr/bin/env bash
+
+# Array of packages to install
+PACKAGES=(
+    # ========================================================== >> Base Packages
+    "git"
+    "base-devel"
+
+    # ========================================================== >> Dependencies
+    "jq"                                            # for json processing
+    "imagemagick"                                   # for image processing
+    "libnotify"                                     # for notifications
+    "parallel"                                      # for parallel processing
+
+    # ========================================================== >> Python
+    "python"
+    "python-pip"
+    "python-psutil"
+    "python-pillow"
+    "pyenv"
+
+    # ========================================================== >> Hyprland
+    "hyprland"
+    "xdg-desktop-portal-hyprland"
+    "xdg-desktop-portal-gtk"
+    "hypridle"                                      # idle
+    "hyprlock"                                      # screenlock
+    "hyprpicker"                                    # color picker
+
+    # ========================================================== >> Authentication Agent
+    "polkit-gnome"
+
+    # ========================================================== >> Login
+    "sddm"
+
+    # ========================================================== >> Screen Brightness
+    "brightnessctl"
+
+    # ========================================================== >> Bluetooth
+    "bluez"
+    "bluez-utils"
+    "blueman"
+
+    # ========================================================== >> Audio
+    "pipewire"
+    "pipewire-alsa"
+    "pipewire-jack"
+    "pipewire-pulse"
+    "gst-plugin-pipewire"
+    "libpulse"
+    "sof-firmware"
+    "alsa-firmware"
+    "pavucontrol"
+    "pamixer"
+    "wireplumber"
+
+    # ========================================================== >> Filesystem / Partition
+    "exfatprogs"
+    "partitionmanager"
+    
+    # ========================================================== >> Top Panel
+    "waybar"
+
+    # ========================================================== >> Terminal
+    "kitty"                                         # terminal
+    "btop"                                          # system monitor
+    "eza"                                           # a modern, maintained replacement for ls.
+    "fastfetch"                                     # system info
+    "lazygit"                                       # cli git ui
+    "dust"                                          # du + rust = dust. Like du but more intuitive.
+    "atuin"                                         # search shell history better
+    "fd"                                            # faster, colorized alternative to find
+    "bat"                                           # Smarter cat with syntax highlighting
+    "zoxide"
+    "fzf"
+    "neovim"
+    "npm"
+    "fish"
+    "fisher"
+    "starship"
+    "swww"
+    "udiskie"
+    "meson"
+    "cmake"
+    "cpio"
+    "hyprwayland-scanner"
+    "vlc"
+    "vlc-plugin-ffmpeg"
+    "mpv"
+    "unzip"
+    "unrar"
+    "7zip"
+    "ark"
+    "bitwarden"
+    "gimp"
+    "gwenview"
+    "qbittorrent"
+    "thunderbird"
+    "notepadqq"
+    "okular"
+    "obsidian"
+    "libreoffice-fresh"
+    "kdeconnect"
+    "solaar"
+    "qalculate-gtk"
+    "kwalletmanager"
+    "nwg-displays"
+    "nwg-look"
+    "qt5ct"
+    "qt6ct"
+    "kvantum"
+    "kvantum-qt5"
+    "qt5-wayland"
+    "qt6-wayland"
+    "dolphin"
+    "kservice5"
+    "kde-cli-tools"
+    "kdegraphics-thumbnailers"
+    "ffmpegthumbs"
+    "archlinux-xdg-menu"
+    "wl-clipboard"
+    "cliphist"
+    "pacman-contrib"
+    "upower"
+    "power-profiles-daemon"
+    "rofi-wayland"
+    "openvpn"
+    "firewalld"
+    "dnscrypt-proxy"
+    "zapret"
+    "swaync"
+    "grim"
+    "slurp"
+    "swappy"
+    "wf-recorder"
+    "ttf-font-awesome"
+    "ttf-fira-sans"
+    "ttf-fira-code"
+    "ttf-firacode-nerd"
+    "ttf-jetbrains-mono-nerd"
+    "ttf-jetbrains-mono"
+    "docker"
+    "flatpak"
+    "gamescope"
+    "steam"
+)

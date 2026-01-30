@@ -1,0 +1,6 @@
+requests
+xarray
+cfgrib
+pandas
+numpy
+scipy

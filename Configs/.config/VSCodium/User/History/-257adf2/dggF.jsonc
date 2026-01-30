@@ -1,0 +1,17 @@
+{
+    "custom/power-profiles-daemon": {
+        "format" : "{}",
+    "exec": "~/.local/share/bin/power_profiles.sh",
+    "interval": 1,
+        "tooltip": true,
+    "exec-if": "exit 0",
+    "return-type": "json",
+    "menu": "on-click",
+    "menu-file": "~/.local/share/waybar/power_profiles.xml",
+    "menu-actions": {
+        "performance": "powerprofilesctl set performance",
+        "balanced": "powerprofilesctl set balanced",
+        "power-saver": "powerprofilesctl set power-saver"
+            },
+    },
+}

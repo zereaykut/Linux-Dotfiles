@@ -1,0 +1,7 @@
+{
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "on-click": "wayfire-msg workspace switch {id}",
+        "sort-by-number": true
+    }
+}

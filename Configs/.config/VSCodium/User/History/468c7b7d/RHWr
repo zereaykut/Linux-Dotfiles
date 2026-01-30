@@ -1,0 +1,16 @@
+{
+    "custom/global-menu": {
+        "format" : "󰍜",
+        "exec": "~/.config/waybar/scripts/idle_manager_status.sh",
+        "interval": 1,
+        "tooltip": true,
+        "exec-if": "exit 0",
+        "return-type": "json",
+        "menu": "on-click",
+        "menu-file": "~/.config/waybar/menus/idle_manager.xml",
+        "menu-actions": {
+            "activate": "idle_manager.sh activated",
+            "deactivate": "idle_manager.sh deactivated",
+                },
+    },
+}

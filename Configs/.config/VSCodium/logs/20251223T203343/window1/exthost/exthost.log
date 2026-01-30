@@ -1,0 +1,5 @@
+2025-12-23 20:33:44.337 [info] Extension host with pid 14506 started
+2025-12-23 20:33:44.423 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-12-23 20:33:44.446 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-12-23 20:33:44.487 [info] Extension host terminating: renderer closed the MessagePort
+2025-12-23 20:33:44.490 [info] Extension host with pid 14506 exiting with code 0

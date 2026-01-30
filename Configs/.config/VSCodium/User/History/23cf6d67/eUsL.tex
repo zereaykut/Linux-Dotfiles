@@ -1,0 +1,200 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[turkish]{babel}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+
+\title{\textbf{İ.T.Ü. Mühendislik Matematiği Sınav Çözümleri}}
+\author{Çözümler}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Soru 1: Laplace Denkleminin Sayısal İfadesi}
+
+\textbf{Soru:} $a(x,y,z)$ üç boyutlu bir potansiyel alan fonksiyonu olmak üzere, Laplace denkleminin sayısal ifadesini geliştiriniz ve katsayılar toplamının sıfır olduğunu gösteriniz.
+\[
+\frac{\partial^2 a}{\partial x^2} + \frac{\partial^2 a}{\partial y^2} + \frac{\partial^2 a}{\partial z^2} = 0
+\]
+
+\textbf{Çözüm:}
+
+İkinci türevler için \textit{Merkezi Sonlu Farklar (Central Finite Difference)} formülü kullanılır. Uzay adımlarının eşit olduğunu ($\Delta x = \Delta y = \Delta z = h$) kabul edersek:
+
+\[
+f''(x) \approx \frac{f(x+h) - 2f(x) + f(x-h)}{h^2}
+\]
+
+Bu formülü her üç eksen için ayrı ayrı yazalım. Grid noktalarını $a_{i,j,k}$ olarak ifade edersek:
+
+\begin{align*}
+\frac{\partial^2 a}{\partial x^2} &\approx \frac{a_{i+1,j,k} - 2a_{i,j,k} + a_{i-1,j,k}}{h^2} \\
+\frac{\partial^2 a}{\partial y^2} &\approx \frac{a_{i,j+1,k} - 2a_{i,j,k} + a_{i,j-1,k}}{h^2} \\
+\frac{\partial^2 a}{\partial z^2} &\approx \frac{a_{i,j,k+1} - 2a_{i,j,k} + a_{i,j,k-1}}{h^2}
+\end{align*}
+
+Bu ifadeleri Laplace denkleminde yerine koyup topladığımızda:
+
+\[
+\frac{1}{h^2} \left[ (a_{i+1,j,k} + a_{i-1,j,k}) + (a_{i,j+1,k} + a_{i,j-1,k}) + (a_{i,j,k+1} + a_{i,j,k-1}) - 6a_{i,j,k} \right] = 0
+\]
+
+Denklemi $h^2$ ile çarparak sadeleştirelim:
+
+\[
+a_{i+1,j,k} + a_{i-1,j,k} + a_{i,j+1,k} + a_{i,j-1,k} + a_{i,j,k+1} + a_{i,j,k-1} - 6a_{i,j,k} = 0
+\]
+
+\textbf{Katsayılar Toplamı Kontrolü:}
+
+Merkez nokta $a_{i,j,k}$'nın katsayısı $-6$, diğer 6 komşu noktanın katsayısı ise $+1$'dir.
+\[
+\text{Toplam} = 1 + 1 + 1 + 1 + 1 + 1 + (-6) = 0
+\]
+Sonuç olarak katsayılar toplamının sıfır olduğu gösterilmiştir.
+
+\hrule
+\vspace{0.5cm}
+
+\section*{Soru 2: Doğrusal Olmayan Model ve En Küçük Kareler}
+
+\textbf{Soru:} $y(x) = A \exp(Bx)$ modelinin katsayılarını ($A>0, B>0$) elde etmek için gerekli denklem sistemini En Küçük Kareler yöntemine göre geliştiriniz.
+
+\textbf{Çözüm:}
+
+Model doğrusal olmadığı için önce doğrusallaştırma işlemi yapılır. Her iki tarafın doğal logaritması alınır:
+
+\[
+\ln(y) = \ln(A \cdot e^{Bx}) \implies \ln(y) = \ln(A) + Bx
+\]
+
+Değişken dönüşümü yapalım:
+\begin{itemize}
+    \item $Y = \ln(y)$
+    \item $a_0 = \ln(A)$
+    \item $a_1 = B$
+\end{itemize}
+
+Yeni doğrusal modelimiz: $Y = a_0 + a_1 x$ olur. Hata kareler toplamı ($S$) fonksiyonunu yazalım:
+
+\[
+S = \sum_{i=1}^{n} \left( Y_i - (a_0 + a_1 x_i) \right)^2
+\]
+
+$S$'i minimize etmek için $a_0$ ve $a_1$'e göre kısmi türevleri alıp sıfıra eşitleriz:
+
+1. $a_0$'a göre türev:
+\[
+\frac{\partial S}{\partial a_0} = -2 \sum (Y_i - a_0 - a_1 x_i) = 0 \implies \sum Y_i = n a_0 + a_1 \sum x_i
+\]
+
+2. $a_1$'e göre türev:
+\[
+\frac{\partial S}{\partial a_1} = -2 \sum x_i (Y_i - a_0 - a_1 x_i) = 0 \implies \sum x_i Y_i = a_0 \sum x_i + a_1 \sum x_i^2
+\]
+
+Bu iki denklem matris formunda (Normal Denklemler) şöyle yazılır:
+
+\[
+\begin{bmatrix}
+n & \sum x_i \\
+\sum x_i & \sum x_i^2
+\end{bmatrix}
+\begin{bmatrix}
+a_0 \\
+a_1
+\end{bmatrix}
+=
+\begin{bmatrix}
+\sum \ln(y_i) \\
+\sum x_i \ln(y_i)
+\end{bmatrix}
+\]
+
+Bu sistem çözüldükten sonra $A = e^{a_0}$ ve $B = a_1$ ile orijinal katsayılara dönülür.
+
+\hrule
+\vspace{0.5cm}
+
+\section*{Soru 3: Diferansiyel Denklem Çözümü}
+
+\textbf{Soru:} $y''(t) + 2y'(t) + 5y(t) = 0$ ; $y(0)=0, y'(0)=2$ probleminin özel çözümünü bulunuz.
+
+\textbf{Çözüm:}
+
+Karakteristik denklemi yazalım ($y = e^{rt}$ dönüşümü ile):
+\[
+r^2 + 2r + 5 = 0
+\]
+Kökleri bulmak için diskriminant yöntemini kullanalım:
+\[
+\Delta = b^2 - 4ac = 2^2 - 4(1)(5) = 4 - 20 = -16
+\]
+\[
+r_{1,2} = \frac{-2 \pm \sqrt{-16}}{2} = \frac{-2 \pm 4i}{2} = -1 \pm 2i
+\]
+Kökler karmaşık sayı olduğundan ($\alpha = -1, \beta = 2$), genel çözüm şu formdadır:
+\[
+y(t) = e^{-t} (C_1 \cos(2t) + C_2 \sin(2t))
+\]
+
+Başlangıç koşullarını uygulayalım:
+
+1. \textbf{Koşul ($y(0)=0$):}
+\[
+y(0) = e^{0} (C_1 \cos(0) + C_2 \sin(0)) = C_1 = 0
+\]
+Denklem sadeleşir: $y(t) = C_2 e^{-t} \sin(2t)$
+
+2. \textbf{Koşul ($y'(0)=2$):}
+Türev alalım (Çarpım kuralı):
+\[
+y'(t) = C_2 \left[ -e^{-t} \sin(2t) + 2e^{-t} \cos(2t) \right]
+\]
+$t=0$ yerine koyalım:
+\[
+y'(0) = C_2 \left[ 0 + 2(1)(1) \right] = 2C_2 = 2 \implies C_2 = 1
+\]
+
+\textbf{Özel Çözüm:}
+\[
+y(t) = e^{-t} \sin(2t)
+\]
+
+\hrule
+\vspace{0.5cm}
+
+\section*{Soru 4: Dalga Denkleminde $t=-\Delta t$ Adımı}
+
+\textbf{Soru:} Dalga denklemini sayısal yöntemle çözerken gerekli olan "$t=-\Delta t$" zaman dilimi için sayısal değerleri ne şekilde elde ederiz?
+
+\textbf{Çözüm:}
+
+Dalga denklemi ($\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}$) ikinci mertebeden zamana bağlı türev içerdiğinden, iterasyonu başlatmak için iki başlangıç koşuluna ihtiyaç duyar: $u(x,0)$ ve $u_t(x,0)$.
+
+$t=0$ anındaki iterasyonda, $t=-\Delta t$ (hayali düğüm noktası / fictitious node) terimi ortaya çıkar. Bu terimi bulmak için **Başlangıç Hız Koşulu** ($u_t(x,0) = g(x)$) merkezi sonlu farklar yöntemiyle açılır.
+
+$j=0$ zaman indisi olmak üzere:
+\[
+\frac{\partial u}{\partial t}\bigg|_{i,0} \approx \frac{u_{i,1} - u_{i,-1}}{2\Delta t} = g(x_i)
+\]
+
+Burada:
+\begin{itemize}
+    \item $u_{i,1}$: $t=\Delta t$ anındaki değer (bilinmeyen).
+    \item $u_{i,-1}$: $t=-\Delta t$ anındaki hayali değer.
+    \item $g(x_i)$: Verilen başlangıç hızı.
+\end{itemize}
+
+Bu denklemden $u_{i,-1}$ çekilir:
+\[
+u_{i,-1} = u_{i,1} - 2\Delta t \cdot g(x_i)
+\]
+
+Elde edilen bu ifade, ana dalga denkleminin sonlu farklar formülünde $t=0$ ($j=0$) için yerine yazılarak $u_{i,-1}$ yok edilir ve zaman adımları başlatılır.
+
+\end{document}

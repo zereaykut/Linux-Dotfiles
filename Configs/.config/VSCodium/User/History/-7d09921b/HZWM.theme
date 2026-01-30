@@ -1,0 +1,32 @@
+
+// Settings that influence how windows are positioned and sized.
+// Find more information on the wiki:
+// https://yalter.github.io/niri/Configuration:-Layout
+layout {
+    gaps 8
+    center-focused-column "never"
+    default-column-width { proportion 1.0; }
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    focus-ring {
+        width 2
+        active-color "#c81e1e"
+        inactive-color "#2b1b1b"
+    }
+
+    border {
+        off
+    }
+
+    shadow {
+        softness 30
+        spread 5
+        offset x=0 y=5
+        color "#0007"
+    }
+}

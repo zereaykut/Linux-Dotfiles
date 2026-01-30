@@ -1,7 +1,7 @@
 [Added Associations]
 application/json=codium-wayland.desktop;
 application/octet-stream=codium-wayland.desktop;
-application/pdf=org.kde.okular.desktop;
+application/pdf=libreoffice-draw.desktop;org.kde.okular.desktop;
 application/toml=codium-wayland.desktop;vscodium.desktop;
 application/x-extension-htm=firefox.desktop;
 application/x-extension-html=firefox.desktop;
@@ -21,10 +21,12 @@ text/css=codium-wayland.desktop;
 text/html=firefox.desktop;
 text/plain=codium-wayland.desktop;
 text/x-python=codium-wayland.desktop;
-video/x-matroska=vlc-2.desktop;
+video/mp4=vlc.desktop;mpv.desktop;
+video/x-matroska=vlc.desktop;mpv.desktop;vlc-2.desktop;
 x-scheme-handler/chrome=firefox.desktop;
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
+application/x-netcdf=org.kde.ark.desktop;
 
 [Default Applications]
 application/json=codium-wayland.desktop;
@@ -49,7 +51,9 @@ text/css=codium-wayland.desktop;
 text/html=firefox.desktop
 text/plain=codium-wayland.desktop;
 text/x-python=codium-wayland.desktop;
-video/x-matroska=vlc-2.desktop;
+video/mp4=mpv.desktop;
+video/x-matroska=mpv.desktop;
 x-scheme-handler/chrome=firefox.desktop
 x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
+application/x-netcdf=org.kde.ark.desktop

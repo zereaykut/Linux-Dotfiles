@@ -1,0 +1,8 @@
+requests
+xarray
+cfgrib
+netCDF4
+dask
+pandas
+numpy
+scipy

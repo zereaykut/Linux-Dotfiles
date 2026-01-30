@@ -1,0 +1,14 @@
+numpy
+pandas
+openpyxl
+matplotlib
+jupyterlab
+notebook
+netCDF4
+cfgrib
+xarray
+scikit-learn
+dask
+torch
+tensorflow
+keras

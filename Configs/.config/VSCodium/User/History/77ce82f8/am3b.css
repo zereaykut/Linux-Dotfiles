@@ -1,0 +1,45 @@
+@import "theme.css";
+
+window#osd {
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: none;
+  background: alpha(@background, 0.8);
+
+  #container {
+    margin: 16px;
+  }
+
+  progressbar {
+    min-height: 6px;
+    border-radius: 999px;
+    background: transparent;
+    color: @foreground;
+    border: none;
+  }
+  
+}
+
+trough {
+    min-height: inherit;
+    border-radius: inherit;
+    border: none;
+    background: alpha(@foreground, 0.3);
+  }
+
+image,
+label {
+  color: @foreground;
+}
+
+progressbar:disabled,
+image:disabled {
+  opacity: 0.5;
+}
+  
+progress {
+  min-height: inherit;
+  border-radius: inherit;
+  border: none;
+  background: @foreground;
+}

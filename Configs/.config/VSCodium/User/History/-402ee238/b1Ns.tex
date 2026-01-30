@@ -1,0 +1,155 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[turkish]{babel}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+
+% Sayfa kenar boşlukları
+\geometry{margin=2.5cm}
+
+\title{\textbf{İ.T.Ü. Fen Bilimleri Enstitüsü \\ JFM501 Mühendislik Matematiği \\ 2016-2017 Güz Dönemi Arasınav Çözümleri}}
+\author{Çözüm Seti}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Soru 1: Isı Denklemi Çözümü}
+\textbf{Problem:} $t$ zaman ve $x$ uzay değişkeni olmak üzere, $h$ uzunluklu ve $k$ ısı yayılım sabitli bir cisim için homojen ısı denkleminin çözümü.
+
+\begin{align*}
+    \text{Denklem:} \quad & \frac{\partial u}{\partial t} - k \frac{\partial^2 u}{\partial x^2} = 0 \\
+    \text{Sınır Koşulları:} \quad & u(0,t) = 0, \quad u(h,t) = 0 \\
+    \text{Başlangıç Koşulu:} \quad & u(x,0) = A
+\end{align*}
+
+\subsection*{Çözüm Adımları}
+\textbf{1. Değişkenlerin Ayrılması:} \\
+Çözümü $u(x,t) = X(x)T(t)$ şeklinde öneriyoruz. Denklemde yerine yazarsak:
+\[
+X(x)T'(t) = k X''(x)T(t) \implies \frac{T'(t)}{k T(t)} = \frac{X''(x)}{X(x)} = -\lambda
+\]
+
+\textbf{2. Konumsal Parçanın Çözümü ($X(x)$):} \\
+\[ X'' + \lambda X = 0, \quad X(0)=0, \quad X(h)=0 \]
+Aşikar olmayan çözümler için $\lambda > 0$ olmalıdır. $\lambda = \beta^2$ diyelim.
+\[ X(x) = c_1 \cos(\beta x) + c_2 \sin(\beta x) \]
+Sınır koşullarını uygularsak:
+\begin{itemize}
+    \item $X(0) = c_1 = 0$
+    \item $X(h) = c_2 \sin(\beta h) = 0 \implies \beta h = n\pi \implies \beta_n = \frac{n\pi}{h}, \quad n=1,2,3\dots$
+\end{itemize}
+Özfonksiyonlar: $X_n(x) = \sin\left(\frac{n\pi x}{h}\right)$, Özdeğerler: $\lambda_n = \left(\frac{n\pi}{h}\right)^2$.
+
+\textbf{3. Zaman Parçasının Çözümü ($T(t)$):} \\
+\[ T' + k\lambda_n T = 0 \implies T_n(t) = B_n e^{-k \left(\frac{n\pi}{h}\right)^2 t} \]
+
+\textbf{4. Genel Çözüm ve Katsayıların Bulunması:} \\
+Süperpozisyon ilkesi ile:
+\[ u(x,t) = \sum_{n=1}^{\infty} B_n \sin\left(\frac{n\pi x}{h}\right) e^{-k \left(\frac{n\pi}{h}\right)^2 t} \]
+$t=0$ anında $u(x,0) = A$:
+\[ A = \sum_{n=1}^{\infty} B_n \sin\left(\frac{n\pi x}{h}\right) \]
+Bu bir Fourier Sinüs serisidir. Katsayılar:
+\[ B_n = \frac{2}{h} \int_{0}^{h} A \sin\left(\frac{n\pi x}{h}\right) dx = \frac{2A}{h} \left[ -\frac{h}{n\pi} \cos\left(\frac{n\pi x}{h}\right) \right]_0^h \]
+\[ B_n = \frac{2A}{n\pi} [1 - (-1)^n] \]
+\begin{itemize}
+    \item $n$ çift ise $B_n = 0$.
+    \item $n$ tek ise $B_n = \frac{4A}{n\pi}$.
+\end{itemize}
+
+\textbf{Sonuç:}
+\begin{equation*}
+    \boxed{u(x,t) = \frac{4A}{\pi} \sum_{n=1,3,5...}^{\infty} \frac{1}{n} \sin\left(\frac{n\pi x}{h}\right) e^{-k\left(\frac{n\pi}{h}\right)^2 t}}
+\end{equation*}
+
+\newpage
+
+\section*{Soru 2: En Küçük Kareler (Polinom)}
+\textbf{Problem:} $y = ax^3 + bx^2 + cx + d$ modeli için normal denklemler sistemini oluşturunuz.
+
+\textbf{Çözüm:}
+Hata kareler toplamı fonksiyonu ($E$):
+\[ E = \sum_{i=1}^{n} \left( y_i - (ax_i^3 + bx_i^2 + cx_i + d) \right)^2 \]
+Bu fonksiyonun $a,b,c,d$ katsayılarına göre kısmi türevleri alınıp sıfıra eşitlenir ($\frac{\partial E}{\partial a}=0$, vb.). Elde edilen doğrusal denklem sistemi matris formunda şöyledir:
+
+\begin{equation*}
+\begin{bmatrix}
+\sum x_i^6 & \sum x_i^5 & \sum x_i^4 & \sum x_i^3 \\
+\sum x_i^5 & \sum x_i^4 & \sum x_i^3 & \sum x_i^2 \\
+\sum x_i^4 & \sum x_i^3 & \sum x_i^2 & \sum x_i \\
+\sum x_i^3 & \sum x_i^2 & \sum x_i & n
+\end{bmatrix}
+\begin{bmatrix}
+a \\ b \\ c \\ d
+\end{bmatrix}
+=
+\begin{bmatrix}
+\sum x_i^3 y_i \\
+\sum x_i^2 y_i \\
+\sum x_i y_i \\
+\sum y_i
+\end{bmatrix}
+\end{equation*}
+
+\vspace{1cm}
+
+\section*{Soru 3: Lineerizasyon ve En Küçük Kareler}
+\textbf{Problem:} $y(x) = A B^x$ modelinin katsayılarını bulmak için gerekli sistemi geliştiriniz.
+
+\textbf{Çözüm:}
+Model lineer değildir. Her iki tarafın doğal logaritmasını alarak lineer hale getiririz:
+\[ \ln y = \ln A + x \ln B \]
+Değişken dönüşümü yapalım:
+\[ Y = \ln y, \quad a_0 = \ln A, \quad a_1 = \ln B, \quad X = x \]
+Yeni denklem: $Y = a_0 + a_1 X$ (Doğru denklemi).
+
+Normal denklemler sistemi:
+\begin{equation*}
+\begin{bmatrix}
+n & \sum x_i \\
+\sum x_i & \sum x_i^2
+\end{bmatrix}
+\begin{bmatrix}
+a_0 \\ a_1
+\end{bmatrix}
+=
+\begin{bmatrix}
+\sum \ln(y_i) \\
+\sum x_i \ln(y_i)
+\end{bmatrix}
+\end{equation*}
+Buradan $a_0$ ve $a_1$ bulunduktan sonra, $A = e^{a_0}$ ve $B = e^{a_1}$ hesaplanır.
+
+\newpage
+
+\section*{Soru 4: Homojen Diferansiyel Denklem}
+\textbf{Problem:} $5y'' + 5y' - y = 0; \quad y(0)=0, \quad y'(0)=1$.
+
+\textbf{Çözüm:}
+Karakteristik denklem:
+\[ 5r^2 + 5r - 1 = 0 \]
+Kökler (Diskriminant $\Delta = 25 - 4(5)(-1) = 45$):
+\[ r_{1,2} = \frac{-5 \pm \sqrt{45}}{10} = \frac{-5 \pm 3\sqrt{5}}{10} \]
+
+Genel Çözüm:
+\[ y(t) = c_1 e^{r_1 t} + c_2 e^{r_2 t} \]
+
+\textbf{Başlangıç Koşullarının Uygulanması:}
+1. $y(0) = c_1 + c_2 = 0 \implies c_2 = -c_1$.
+2. $y'(t) = c_1 r_1 e^{r_1 t} + c_2 r_2 e^{r_2 t}$.
+\[ y'(0) = c_1 r_1 + c_2 r_2 = 1 \]
+$c_2 = -c_1$ yerine yazılırsa:
+\[ c_1(r_1 - r_2) = 1 \]
+Kökler farkı: $r_1 - r_2 = \frac{6\sqrt{5}}{10} = \frac{3\sqrt{5}}{5}$.
+\[ c_1 \left(\frac{3\sqrt{5}}{5}\right) = 1 \implies c_1 = \frac{\sqrt{5}}{3}, \quad c_2 = -\frac{\sqrt{5}}{3} \]
+
+\textbf{Özel Çözüm:}
+\begin{equation*}
+    \boxed{y(t) = \frac{\sqrt{5}}{3} \left( e^{\frac{-5 + 3\sqrt{5}}{10} t} - e^{\frac{-5 - 3\sqrt{5}}{10} t} \right)}
+\end{equation*}
+
+\end{document}

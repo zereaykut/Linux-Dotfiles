@@ -1,0 +1,129 @@
+{
+  "layer": "top",     // Waybar at top layer
+  "position": "top",  // Waybar position (top|bottom|left|right)
+  "height": 30,       // Waybar height (to be removed for auto height)  
+  "margin-top": 3,    
+  "margin-left": 10,  
+  "margin-bottom": 0, 
+  "margin-right": 10, 
+  
+  "include" : [
+    "~/.config/waybar/modules/hyprland_workspaces.jsonc",
+    "~/.config/waybar/modules/tray.jsonc",
+    "~/.config/waybar/modules/clock.jsonc",
+    "~/.config/waybar/modules/cpu.jsonc",
+    "~/.config/waybar/modules/memory.jsonc",
+    "~/.config/waybar/modules/backlight.jsonc",
+    "~/.config/waybar/modules/network.jsonc",
+    "~/.config/waybar/modules/pulseaudio.jsonc",
+    "~/.config/waybar/modules/bluetooth.jsonc",
+    "~/.config/waybar/modules/battery.jsonc",
+    "~/.config/waybar/modules/wlr_taskbar.jsonc",
+    "~/.config/waybar/modules/idle_inhibitor.jsonc",
+    "~/.config/waybar/modules/privacy.jsonc",
+    "~/.config/waybar/modules/keyboard_state.jsonc",
+    "~/.config/waybar/modules/temperature.jsonc",
+    "~/.config/waybar/modules/disk.jsonc",
+    "~/.config/waybar/modules/custom_system_updates.jsonc",
+  ],
+
+  "modules-left": ["cpu", "memory", "temperature", "disk", "backlight", "pulseaudio", "pulseaudio#microphone"],
+  "modules-center": ["hyprland/workspaces", "wlr/taskbar", "clock", "idle_inhibitor", "privacy", "keyboard-state"],
+  "modules-right": ["battery", "network", "tray", "custom/system-updates", "custom/power-profiles-daemon", "custom/notification", "group/menu"],
+
+
+  "mpris": {
+    "format": "{player_icon}",
+    "format-paused": "{status_icon}",
+    "player-icons": {
+      "default": "▶",
+      "vlc": "󰕼"
+    },
+    "status-icons": {
+      "paused": "⏸"
+    },
+    "tooltip-format": "{player} ({status}) {dynamic}",
+    "on-click": "play-pause",
+    "on-middle-click": "previous track",
+    "on-right-click": "next track"
+  },
+
+  "group/menu": {
+    "format": "",
+		"orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false,
+    },
+		"modules": [
+      "custom/menu",
+			"custom/logout",
+      "custom/reboot",
+      "custom/shutdown",
+		]
+	},
+  
+  "custom/menu": {
+    "format": "",
+    "tooltip": false,
+  },
+
+  "custom/shutdown": {
+    "format": "",
+    "on-click": "systemctl poweroff",
+    "tooltip": true,
+    "tooltip-format": " Shutdown"
+  },
+
+  "custom/reboot": {
+    "format": "",
+    "on-click": "systemctl reboot",
+    "tooltip": true,
+    "tooltip-format": " Reboot"
+  },
+
+  "custom/logout": {
+    "format": "󰍃",
+    "on-click": "loginctl terminate-user $USER",
+    "tooltip": true,
+    "tooltip-format": "󰍃 Logout"
+  },
+
+  "custom/power-profiles-daemon": {
+	"format" : "{}",
+  "exec": "~/.local/share/bin/power_profiles.sh",
+  "interval": 1,
+	"tooltip": true,
+  "exec-if": "exit 0",
+  "return-type": "json",
+  "menu": "on-click",
+  "menu-file": "~/.local/share/waybar/power_profiles.xml",
+  "menu-actions": {
+    "performance": "powerprofilesctl set performance",
+    "balanced": "powerprofilesctl set balanced",
+    "power-saver": "powerprofilesctl set power-saver"
+		},
+},
+
+"custom/notification": {
+  "tooltip": false,
+  "format": "{icon}",
+  "format-icons": {
+    "notification": "<span foreground='red'><sup></sup></span>",
+    "none": "",
+    "dnd-notification": "<span foreground='red'><sup></sup></span>",
+    "dnd-none": "",
+    "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+    "inhibited-none": "",
+    "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+    "dnd-inhibited-none": ""
+  },
+  "return-type": "json",
+  "exec-if": "which swaync-client",
+  "exec": "swaync-client -swb",
+  "on-click": "swaync-client -t -sw",
+  "on-click-right": "swaync-client -d -sw",
+  "escape": true
+},
+
+}
