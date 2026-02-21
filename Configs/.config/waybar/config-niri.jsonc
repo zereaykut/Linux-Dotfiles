@@ -8,7 +8,7 @@
   "margin-right": 10, 
   
   "include" : [
-    "~/.config/waybar/modules/hyprland_workspaces.jsonc",
+    "~/.config/waybar/modules/niri-workspaces.jsonc",
     "~/.config/waybar/modules/tray.jsonc",
     "~/.config/waybar/modules/clock.jsonc",
     "~/.config/waybar/modules/cpu.jsonc",
@@ -18,21 +18,20 @@
     "~/.config/waybar/modules/pulseaudio.jsonc",
     "~/.config/waybar/modules/bluetooth.jsonc",
     "~/.config/waybar/modules/battery.jsonc",
-    "~/.config/waybar/modules/wlr_taskbar.jsonc",
-    "~/.config/waybar/modules/custom_idle_manager.jsonc",
-    "~/.config/waybar/modules/privacy.jsonc",
-    "~/.config/waybar/modules/keyboard_state.jsonc",
+    "~/.config/waybar/modules/wlr-taskbar.jsonc",
+    "~/.config/waybar/modules/custom-idle-manager.jsonc",
+    "~/.config/waybar/modules/keyboard-state.jsonc",
     "~/.config/waybar/modules/temperature.jsonc",
     "~/.config/waybar/modules/disk.jsonc",
     "~/.config/waybar/modules/mpris.jsonc",
-    "~/.config/waybar/modules/custom_power_profiles_daemon.jsonc",
-    "~/.config/waybar/modules/custom_system_updates.jsonc",
-    "~/.config/waybar/modules/custom_notification.jsonc",
-    "~/.config/waybar/modules/custom_global_menu.jsonc",
+    "~/.config/waybar/modules/custom-power-profiles-daemon.jsonc",
+    "~/.config/waybar/modules/custom-system-updates.jsonc",
+    "~/.config/waybar/modules/custom-notification.jsonc",
+    "~/.config/waybar/modules/custom-global-menu.jsonc",
   ],
 
   "modules-left": ["cpu", "memory", "temperature", "disk", "backlight", "pulseaudio", "pulseaudio#microphone"],
-  "modules-center": ["hyprland/workspaces", "wlr/taskbar", "clock", "custom/idle-manager", "keyboard-state"],
+  "modules-center": ["niri/workspaces", "wlr/taskbar", "clock", "custom/idle-manager", "keyboard-state"],
   "modules-right": ["battery", "network", "tray", "custom/system-updates", "custom/power-profiles-daemon", "custom/notification", "custom/global-menu"],
 
 }

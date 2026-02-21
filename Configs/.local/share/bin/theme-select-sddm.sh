@@ -4,17 +4,14 @@ source $HOME/.local/share/bin/global.sh
 
 SDDM_PATH="/usr/share/sddm/"
 sddm_waydots="$SDDM_PATH/themes/SDDM-waydots/"
-rofi_conf="$HOME/.config/rofi/theme_select.rasi"
 sddm_cache_path="/$WAYDOTS_CACHE/theme_sddm_previews/$theme/"
 
-mkdir -p $sddm_cache_path
+mkdir -p "$sddm_cache_path"
 
+# Load theme images into array
 mapfile -d '' PICS < <(find "$sddm_waydots/themes" -maxdepth 2 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" \) -print0)
 
-# Rofi command
-rofi_command="rofi -i -show -dmenu -config $rofi_conf"
-
-# Sorting Wallpapers
+# Generate thumbnails and list them for vicinae
 menu() {
     # Sort the PICS array
     IFS=$'\n' sorted_options=($(sort <<<"${PICS[*]}"))
@@ -22,52 +19,46 @@ menu() {
     for pic_path in "${sorted_options[@]}"; do
         pic_name=$(basename "$pic_path")
 
-        # If it's a GIF, extract the first frame as a temporary file
-        # if [[ "$pic_name" =~ \.gif$ ]]; then
-        cached_pic="$sddm_cache_path/$(basename "$pic_path" .gif).png"
+        # Standardize extension for cache (e.g., .gif -> .png)
+        theme_name_raw="${pic_name%.*}"
+        cached_pic="$sddm_cache_path/$theme_name_raw.png"
 
         # Check if the cached version already exists
         if [[ ! -f "$cached_pic" ]]; then
-            # echo "Creating cached first frame for GIF: $pic_name"
-            # Extract first frame if it doesn't exist
+            # Extract first frame (for gifs) and resize
             magick "$pic_path"[0] -resize 480x270\! "$cached_pic"
         fi
-        pic_path="$cached_pic" # Replace GIF with cached first frame PNG
-        # fi
-
-        # Displaying the image path or file name
-        printf "%s\x00icon\x1f%s\n" "$(echo "$pic_name" | cut -d. -f1)" "$pic_path"
+        
+        # Send the CACHED image path to vicinae
+        echo "$cached_pic"
     done
 }
 
 # Choice of wallpapers
 main() {
-    choice=$(menu | $rofi_command)
+    # 1. Run menu to generate cache and pipe list to vicinae
+    choice=$(menu | vicinae dmenu -p 'Select SDDM Theme')
 
-    # Trim any potential whitespace or hidden characters
+    # Trim any potential whitespace
     choice=$(echo "$choice" | xargs)
-    # RANDOM_PIC_NAME=$(echo "$RANDOM_PIC_NAME" | xargs)
-    echo $choice
-    # No choice case
+
+    # 2. No choice case
     if [[ -z "$choice" ]]; then
         echo "No choice selected. Exiting."
         exit 0
     fi
 
-    # Find the index of the selected file
-    pic_index=-1
-    for i in "${!PICS[@]}"; do
-        filename=$(basename "${PICS[$i]}")
-        if [[ "$filename" == "$choice"* ]]; then
-            pic_index=$i
-            break
-        fi
-    done
+    # 3. Process Selection
+    # 'choice' is the path to the cached thumbnail (e.g., .../cache/MyTheme.png).
+    # We need the theme name (e.g., "MyTheme") to find the correct config folder.
+    
+    selected_filename=$(basename "$choice")
+    theme_name="${selected_filename%.*}" # Remove .png extension
 
-    # Check if a wallpaper was selected
-    if [ -n "$choice" ]; then
-        # Change SDDM theme config
-        pkexec cp -f "$sddm_waydots/themes/$choice/theme.conf" "$sddm_waydots/theme.conf"
+    # 4. Apply SDDM Theme
+    # The script assumes a folder exists in themes/ with the same name as the image.
+    if [ -n "$theme_name" ]; then
+        pkexec cp -f "$sddm_waydots/themes/$theme_name/theme.conf" "$sddm_waydots/theme.conf"
     else
         echo "No SDDM theme selected."
         exit 1

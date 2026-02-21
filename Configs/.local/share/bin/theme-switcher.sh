@@ -67,7 +67,13 @@ envsubst "$VARS" < "$config_path/gtk_4_settings.theme" > "$HOME/.config/gtk-4.0/
 
 # waybar
 cp -f $theme_path/waybar.theme $HOME/.config/waybar/theme.css
+cp -f $theme_path/waybar_clock.theme $HOME/.config/waybar/modules/clock.jsonc
 start-top-bar.sh
+
+# vicinae
+cp -f $theme_path/vicinae.theme $HOME/.local/share/vicinae/themes/waydots.toml
+start-app-launcher-daemon.sh
+vicinae theme set waydots
 
 # kvantum
 cp -f $theme_path/kvantum/kvantum.theme $HOME/.config/Kvantum/kv_theme/kv_theme.svg
@@ -88,7 +94,7 @@ cp -f $theme_path/wlogout.theme $HOME/.config/wlogout/theme.css
 
 # swaync
 cp -f $theme_path/swaync.theme $HOME/.config/swaync/theme.css
-start-notification-daemon.sh
+start-notifications-daemon.sh
 
 # swayosd
 cp -f $theme_path/swayosd.theme $HOME/.config/swayosd/theme.css

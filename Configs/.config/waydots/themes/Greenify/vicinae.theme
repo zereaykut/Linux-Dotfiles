@@ -1,0 +1,27 @@
+[meta]
+version = 1
+name = "Greenify"
+description = "Greenify color scheme"
+variant = "dark"
+icon = "icons/Greenify.png"
+
+[colors.core]
+background = "#1B2A38"
+foreground = "#FAFEFE"
+secondary_background = "#191e21"
+border = "#58686d"
+accent = "#11b4b4"
+
+[colors.accents]
+blue = "#2069C3"
+green = "#A2D557"
+magenta = "#B672A6"
+orange = "#E35205"
+purple = "#9604ED"
+red = "#FF2C2A"
+yellow = "#F2E263"
+cyan = "#9ce1bd"
+
+[colors.list.item.selection]
+background = "#262f33"
+secondary_background = "#374145"

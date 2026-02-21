@@ -3,72 +3,77 @@
 source $HOME/.local/share/bin/global.sh
 
 themes_path="$WAYDOTS_PATH/themes/"
-rofi_conf="$HOME/.config/rofi/theme_select.rasi"
 theme_cache_path="/$WAYDOTS_CACHE/theme_previews/$theme/"
 
-mkdir -p $theme_cache_path
+mkdir -p "$theme_cache_path"
 
+# Load original images into an array
 mapfile -d '' PICS < <(find "$themes_path" -maxdepth 2 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" \) -print0)
 
-# Rofi command
-rofi_command="rofi -i -show -dmenu -config $rofi_conf"
-
-# Sorting Theme Wallpapers
+# Generate thumbnails and list them for vicinae
 menu() {
     # Sort the PICS array
     IFS=$'\n' sorted_options=($(sort <<<"${PICS[*]}"))
 
     for pic_path in "${sorted_options[@]}"; do
         pic_name=$(basename "$pic_path")
-
-        # If it's a GIF, extract the first frame as a temporary file
-        # if [[ "$pic_name" =~ \.gif$ ]]; then
-        cached_pic="$theme_cache_path/$(basename "$pic_path" .gif).png"
+        
+        # specific handling to clean extensions for the cache filename
+        # e.g., "image.jpg" -> "image.png" and "animation.gif" -> "animation.png"
+        theme_name_raw="${pic_name%.*}"
+        cached_pic="$theme_cache_path/$theme_name_raw.png"
 
         # Check if the cached version already exists
         if [[ ! -f "$cached_pic" ]]; then
-            # echo "Creating cached first frame for GIF: $pic_name"
-            # Extract first frame if it doesn't exist
+            # Extract first frame (for gifs) and resize
             magick "$pic_path"[0] -resize 480x270\! "$cached_pic"
         fi
-        pic_path="$cached_pic" # Replace GIF with cached first frame PNG
-        # fi
-
-        # Displaying the image path or file name
-        printf "%s\x00icon\x1f%s\n" "$(echo "$pic_name" | cut -d. -f1)" "$pic_path"
+        
+        # Send the CACHED image path to vicinae
+        # Vicinae will display this small, fast-loading image
+        echo "$cached_pic"
     done
 }
 
-# Choice of theme
 main() {
-    choice=$(menu | $rofi_command)
+    # 1. Run menu to generate cache and pipe list to vicinae
+    choice=$(menu | vicinae dmenu -p 'Select Theme')
 
-    # Trim any potential whitespace or hidden characters
+    # Trim any potential whitespace
     choice=$(echo "$choice" | xargs)
-    # RANDOM_PIC_NAME=$(echo "$RANDOM_PIC_NAME" | xargs)
-    echo $choice
-    # No choice case
+
+    # 2. No choice case
     if [[ -z "$choice" ]]; then
         echo "No choice selected. Exiting."
         exit 0
     fi
 
-    # Find the index of the selected file
-    pic_index=-1
-    for i in "${!PICS[@]}"; do
-        filename=$(basename "${PICS[$i]}")
-        if [[ "$filename" == "$choice"* ]]; then
-            pic_index=$i
+    # 3. Resolve the Original File
+    # 'choice' is currently the path to the cached thumbnail (e.g., .../cache/mytheme.png).
+    # We need to find the original file (e.g., .../themes/mytheme.jpg).
+    
+    selected_filename=$(basename "$choice")
+    selected_theme_name="${selected_filename%.*}" # Remove .png extension
+
+    original_file=""
+    
+    # Loop through original PICS to find the matching theme name
+    for pic in "${PICS[@]}"; do
+        # Get basename without extension of the original picture
+        base_name=$(basename "$pic")
+        base_name_no_ext="${base_name%.*}"
+        
+        if [[ "$base_name_no_ext" == "$selected_theme_name" ]]; then
+            original_file="$pic"
             break
         fi
     done
 
-    # Check if a theme was selected
-    if [ -n "$choice" ]; then
-        # Change theme & wallpaper
-        theme-switcher.sh "${choice}" "${PICS[$pic_index]}"
+    # 4. Apply the theme
+    if [ -n "$original_file" ]; then
+        theme-switcher.sh "$selected_theme_name" "$original_file"
     else
-        echo "No theme selected."
+        echo "Error: Could not locate original file for theme '$selected_theme_name'."
         exit 1
     fi
 }

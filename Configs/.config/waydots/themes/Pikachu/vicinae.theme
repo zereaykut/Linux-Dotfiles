@@ -1,0 +1,28 @@
+[meta]
+version = 1
+name = "Pikachu"
+description = "Pikachu color scheme"
+variant = "dark"
+icon = "icons/Pikachu.png"
+
+[colors.core]
+background = "#18100f"        # bg0_h (hard contrast bg)
+foreground = "#abb1c5"        # fg1
+secondary_background = "#1D2021"  # bg0_h (darker bg for surfaces)
+border = "#504945"            # bg2 (subtle border)
+accent = "#fad429"            # blue (neutral)
+
+[colors.accents]
+blue = "#4A6B9C"              # blue (neutral)
+green = "#9BB47F"             # green (neutral)
+magenta = "#BF73CC"           # purple (bright)
+orange = "#E59F22"            # orange (neutral)
+purple = "#6E6695"            # purple (neutral)
+red = "#965C62"               # red (neutral)
+yellow = "#fad429"            # yellow (neutral)
+cyan = "#83A598"              # aqua (bright)
+
+[colors.list.item.selection]
+background = "#3C3836"
+secondary_background = "#665C54"
+

@@ -1,0 +1,28 @@
+[meta]
+version = 1
+name = "Sweet Mars"
+description = "Sweet-Mars color scheme"
+variant = "dark"
+icon = "icons/Sweet-Mars.png"
+
+[colors.core]
+background = "#000000"        # Base
+foreground = "#FBF0B2"        # Text
+secondary_background = "#181825"  # Mantle
+border = "#313244"            # Surface0
+accent = "#FF4840"            # Blue
+
+[colors.accents]
+blue = "#0092FC"
+green = "#5ECB5A"
+magenta = "#F713DF"
+orange = "#F99F30"
+purple = "#9604ED"
+red = "#EC1B30"
+yellow = "#FCC824"
+cyan = "#5ccbb8"
+
+[colors.list.item.selection]
+background = "#292A3B"
+secondary_background = "#383A4A"
+

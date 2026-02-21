@@ -8,7 +8,7 @@
         },
             "modules": [
         "custom/power_menu",
-                "custom/logout",
+        "custom/logout",
         "custom/reboot",
         "custom/shutdown",
             ]

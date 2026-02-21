@@ -1,7 +1,7 @@
 {
     "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "  {volume}%",
+        "format": "{icon} {volume}",
+        "format-bluetooth": "  {volume}",
         "format-bluetooth-muted": "婢 ",
         "format-muted": "",
         "format-icons": {
@@ -22,7 +22,7 @@
     },
     
     "pulseaudio#microphone": {
-      "format": "{format_source} {source_volume}%",
+      "format": "{format_source} {source_volume}",
       "format-source": "",
       "format-source-muted": "",
       "on-click-right": "pavucontrol -t 4",

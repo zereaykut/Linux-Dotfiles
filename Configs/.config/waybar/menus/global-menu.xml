@@ -118,11 +118,6 @@
               </object>
             </child>
             <child>
-              <object class="GtkMenuItem" id="app-launcher-big">
-                <property name="label">App Launcher Big</property>
-              </object>
-            </child>
-            <child>
               <object class="GtkMenuItem" id="clipboard">
                 <property name="label">Clipboard</property>
               </object>
@@ -130,6 +125,11 @@
             <child>
               <object class="GtkMenuItem" id="tab-menu">
                 <property name="label">Tab Menu</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="close-all-windows">
+                <property name="label">Close All Windows</property>
               </object>
             </child>
           </object>

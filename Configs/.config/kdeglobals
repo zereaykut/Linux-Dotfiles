@@ -34,5 +34,11 @@ View Style=DetailTree
 EnableRemoteFolderThumbnail=false
 MaximumRemoteSize=0
 
+[Colors:View]
+BackgroundNormal=#00000000
+
+[UiSettings]
+ColorScheme=colors
+
 [Wallet]
 Enabled=false

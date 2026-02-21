@@ -1,0 +1,28 @@
+[meta]
+version = 1
+name = "Crimson Red"
+description = "Crimson Red color scheme"
+variant = "dark"
+icon = "icons/Crimson-Red.png"
+
+[colors.core]
+background = "#2b1b1b"        # Base
+foreground = "#ffffff"        # Text
+secondary_background = "#181825"  # Mantle
+border = "#313244"            # Surface0
+accent = "#c81e1e"            # Blue
+
+[colors.accents]
+blue = "#6a8abe"
+green = "#82ac7e"
+magenta = "#be95b3"
+orange = "#ba8667"
+purple = "#CBA6F7"
+red = "#F38BA8"
+yellow = "#bdac85"
+cyan = "#5cb2a4"
+
+[colors.list.item.selection]
+background = "#292A3B"
+secondary_background = "#383A4A"
+

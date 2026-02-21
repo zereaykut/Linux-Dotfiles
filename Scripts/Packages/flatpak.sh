@@ -2,22 +2,22 @@
 
 FLATPAK_APPS=(
     # ========================================================== >> App Management
-    "com.github.tchx84.Flatseal"          # manage flatpak permissions
-    "io.github.flattool.Warehouse"        # manage flatpak apps
+    "com.github.tchx84.Flatseal"   # manage flatpak permissions
+    "io.github.flattool.Warehouse" # manage flatpak apps
 
     # ========================================================== >> Browsers
-    "com.brave.Browser"                   # Brave browser
+    "com.brave.Browser" # Brave browser
 
     # ========================================================== >> System Monitoring
-    "io.missioncenter.MissionCenter"      # system monitor
+    "io.missioncenter.MissionCenter" # system monitor
 
     # ========================================================== >> Utility
-    "it.mijorus.collector"                # drag & drop file helper
-    "org.localsend.localsend_app"         # local file sharing
+    # "it.mijorus.collector"                # drag & drop file helper
+    "org.localsend.localsend_app" # local file sharing
 
     # ========================================================== >> Media / Streaming
-    "com.obsproject.Studio"               # OBS Studio
-    "us.zoom.Zoom"                        # Zoom meetings
+    "com.obsproject.Studio" # OBS Studio
+    "us.zoom.Zoom"          # Zoom meetings
 
     # ========================================================== >> Optional / Additional (remove # to enable)
     # "io.github.shiftey.Desktop"         # GitHub Desktop

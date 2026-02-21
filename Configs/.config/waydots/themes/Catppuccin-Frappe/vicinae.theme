@@ -1,0 +1,28 @@
+[meta]
+version = 1
+name = "Catppuccin Frappe"
+description = "Catppuccin Frappe color scheme"
+variant = "dark"
+icon = "icons/Catppuccin-Frappe.png"
+
+[colors.core]
+background = "#303446"        # Base
+foreground = "#C6D0F5"        # Text
+secondary_background = "#292C3C"  # Mantle
+border = "#414559"            # Surface0
+accent = "#8CAAEE"            # Blue
+
+[colors.accents]
+blue = "#8CAAEE"
+green = "#A6D189"
+magenta = "#F4B8E4"
+orange = "#EF9F76"
+purple = "#CA9EE6"
+red = "#E78284"
+yellow = "#E5C890"
+cyan = "#81C8BE"
+
+[colors.list.item.selection]
+background = "#3A3E51"
+secondary_background = "#51576D"
+

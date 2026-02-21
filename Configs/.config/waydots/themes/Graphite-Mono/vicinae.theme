@@ -1,0 +1,27 @@
+[meta]
+version = 1
+name = "Graphite Mono"
+description = "Graphite Mono color scheme"
+variant = "dark"
+icon = "icons/Graphite-Mono.png"
+
+[colors.core]
+background = "#000000"        # UI background (darker than editor)
+foreground = "#FFFFFF"        # Main text
+secondary_background = "#0F131A"  # Editor background (elevated)
+border = "#1A1F29"            # Line color
+accent = "#4B4E6D"            # Tag color
+
+[colors.accents]
+blue = "#4B4E6D"              # Entity
+green = "#6A8E95"             # String
+magenta = "#D2A6FF"           # Constant
+orange = "#FF8F40"            # Keyword
+purple = "#D6B4E2"            # Constant
+red = "#C70039"               # Error/VCS removed
+yellow = "#F4A300"            # Function
+cyan = "#95E6CB"              # Regexp
+
+[colors.list.item.selection]
+background = "#141821"
+secondary_background = "#232A38"

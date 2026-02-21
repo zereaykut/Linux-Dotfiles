@@ -1,0 +1,28 @@
+[meta]
+version = 1
+name = "Windows 11"
+description = "Windows 11 color scheme"
+variant = "dark"
+icon = "icons/Windows-11.png"
+
+[colors.core]
+background = "#1E1E2E"        # bg
+foreground = "#EDEDED"        # fg
+secondary_background = "#16161E"  # bg_dark
+border = "#414868"            # fg_dark (subtle border)
+accent = "#3B3B44"            # blue
+
+[colors.accents]
+blue = "#3C92E3"
+green = "#A2C9A2"
+magenta = "#F5C2E7"
+orange = "#F7A141"
+purple = "#9B5F98"
+red = "#D13F5F"
+yellow = "#F3B900"
+cyan = "#67a3c6"
+
+[colors.list.item.selection]
+background = "#232637"
+secondary_background = "#3B4261"
+

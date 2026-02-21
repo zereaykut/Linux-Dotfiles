@@ -4,7 +4,7 @@
         "format": "{icon} {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
         "tooltip": false,
-        "on-scroll-up": "brightness.sh +5",
-        "on-scroll-down": "brightness.sh -5",
+        "on-scroll-up": "swayosd-client --brightness raise",
+        "on-scroll-down": "swayosd-client --brightness lower",
     },
 }

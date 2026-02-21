@@ -1,12 +1,12 @@
 {
     "custom/global-menu": {
         "format" : "󰍜",
-        // "exec": "~/.config/waybar/scripts/global_menu.sh",
+        // "exec": "~/.config/waybar/scripts/global-menu.sh",
         "tooltip": false,
         // "exec-if": "exit 0",
         // "return-type": "json",
         "menu": "on-click",
-        "menu-file": "~/.config/waybar/menus/global_menu.xml",
+        "menu-file": "~/.config/waybar/menus/global-menu.xml",
         "menu-actions": {
             // Power Actions
             "shutdown": "systemctl poweroff",
@@ -30,10 +30,10 @@
             "sddm-theme-select": "theme-select-sddm.sh",
 
             // Scripts Actions
-            "app-launcher": "launcher.sh 1",
-            "app-launcher-big": "launcher.sh 2",
-            "clipboard": "clip-manager.sh",
-            "tab-menu": "hyprland_window_switcher.py",
+            "app-launcher": "app-launcher.sh 'applications'",
+            "clipboard": "app-launcher.sh 'clipboard'",
+            "tab-menu": "app-launcher.sh 'window-management'",
+            "close-all-windows": "close-all-windows.sh",
         }
     },
 }
