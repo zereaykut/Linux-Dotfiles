@@ -193,22 +193,22 @@ binds {
     // Main
     Mod+H hotkey-overlay-title="Show important hotkeys" { show-hotkey-overlay; }
     Ctrl+Alt+Delete hotkey-overlay-title="Exit niri" { quit; }
-    Mod+Escape hotkey-overlay-title="Logout menu big mode: wlogout" {spawn-sh "launch_logout.sh 1";}
-    Mod+Backspace hotkey-overlay-title="Logout menu small mode: wlogout" {spawn-sh "launch_logout.sh 2";}
+    Mod+Escape hotkey-overlay-title="Logout menu big mode: wlogout" {spawn-sh "logout-menu.sh 1";}
+    Mod+Backspace hotkey-overlay-title="Logout menu small mode: wlogout" {spawn-sh "logout-menu.sh 2";}
     Mod+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Mod+N hotkey-overlay-title="Notification center: swaync" {spawn-sh "swaync-client -t -sw";}
-    Mod+B hotkey-overlay-title="Launch top bar: waybar" {spawn-sh "toggle_top_bar.sh";}
+    Mod+B hotkey-overlay-title="Launch top bar: waybar" {spawn-sh "toggle-top-bar.sh";}
     Ctrl+Shift+Escape hotkey-overlay-title="Open Mission Center (system monitor)" {spawn "io.missioncenter.MissionCenter";}
 
     // Rofi
-    Mod+Space hotkey-overlay-title="Launcher small mode: rofi" {spawn-sh "launcher.sh 1";}
-    Mod+A hotkey-overlay-title="Launcher big mode: rofi" {spawn-sh "launcher.sh 2";}
-    Mod+V hotkey-overlay-title="Clipboard manager" {spawn-sh "clip_manager.sh";}
-    Alt+Tab hotkey-overlay-title="Clipboard manager" {spawn-sh "niri_window_switcher.py";}
-    Mod+W hotkey-overlay-title="Select wallpaper" {spawn-sh "wall_select.sh";}
-    Mod+T hotkey-overlay-title="Select theme" {spawn-sh "theme_select.sh";}
-    Mod+D hotkey-overlay-title="Select SDDM theme" {spawn-sh "theme_select_sddm.sh";}
-    Mod+K hotkey-overlay-title="Run scripts" {spawn-sh "run_scripts.sh";}
+    Mod+Space hotkey-overlay-title="Launcher small mode: rofi" {spawn-sh "app-launcher.sh 'applications'";}
+    Mod+A hotkey-overlay-title="Launcher big mode: rofi" {spawn-sh "app-launcher.sh 'emoji-picker'";}
+    Mod+V hotkey-overlay-title="Clipboard manager" {spawn-sh "app-launcher.sh 'clipboard'";}
+    Alt+Tab hotkey-overlay-title="Clipboard manager" {spawn-sh "app-launcher.sh 'window-management'";}
+    Mod+W hotkey-overlay-title="Select wallpaper" {spawn-sh "wall-select.sh";}
+    Mod+T hotkey-overlay-title="Select theme" {spawn-sh "theme-select.sh";}
+    Mod+D hotkey-overlay-title="Select SDDM theme" {spawn-sh "theme-select-sddm.sh";}
+    Mod+K hotkey-overlay-title="Run scripts" {spawn-sh "run-scripts.sh";}
 
 
     // Applications

@@ -17,14 +17,8 @@ group {
 
 decoration {
     rounding = 10
-    shadow {
-        enabled = yes
-        offset = 4 4
-        range = 0
-        render_power = 4
-        ignore_window = yes
-        color = 0xffFFFFFF
-    }
+    shadow:enabled = false
+
     blur {
         enabled = yes
         size = 6

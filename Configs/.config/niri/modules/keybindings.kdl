@@ -10,10 +10,10 @@ binds {
     Ctrl+Shift+Escape hotkey-overlay-title="Open Mission Center (system monitor)" {spawn "io.missioncenter.MissionCenter";}
 
     // Rofi
-    Mod+Space hotkey-overlay-title="Launcher small mode: rofi" {spawn-sh "launcher.sh 1";}
-    Mod+A hotkey-overlay-title="Launcher big mode: rofi" {spawn-sh "launcher.sh 2";}
-    Mod+V hotkey-overlay-title="Clipboard manager" {spawn-sh "clip-manager.sh";}
-    Alt+Tab hotkey-overlay-title="Clipboard manager" {spawn-sh "niri_window_switcher.py";}
+    Mod+Space hotkey-overlay-title="Launcher small mode: rofi" {spawn-sh "app-launcher.sh 'applications'";}
+    Mod+A hotkey-overlay-title="Launcher big mode: rofi" {spawn-sh "app-launcher.sh 'emoji-picker'";}
+    Mod+V hotkey-overlay-title="Clipboard manager" {spawn-sh "app-launcher.sh 'clipboard'";}
+    Alt+Tab hotkey-overlay-title="Clipboard manager" {spawn-sh "app-launcher.sh 'window-management'";}
     Mod+W hotkey-overlay-title="Select wallpaper" {spawn-sh "wall-select.sh";}
     Mod+T hotkey-overlay-title="Select theme" {spawn-sh "theme-select.sh";}
     Mod+D hotkey-overlay-title="Select SDDM theme" {spawn-sh "theme-select-sddm.sh";}

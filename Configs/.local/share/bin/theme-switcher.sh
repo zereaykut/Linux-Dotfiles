@@ -41,7 +41,7 @@ if [[ "$SESSION" == *"hyprland"* ]]; then
 elif [[ "$SESSION" == *"niri"* ]]; then
     echo "Detected Niri session"
     cp -f $theme_path/niri.theme $HOME/.config/niri/modules/theme.kdl
-    $SOURCE_PATH/generate_niri_config.sh
+    $SOURCE_PATH/generate-niri-config.sh
     niri msg reload-config
 else
     echo "Unknown session ('${SESSION}')"
