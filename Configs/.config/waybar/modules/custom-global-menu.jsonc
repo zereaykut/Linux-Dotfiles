@@ -1,6 +1,6 @@
 {
     "custom/global-menu": {
-        "format" : "󰍜",
+        "format": "󰍜",
         // "exec": "~/.config/waybar/scripts/global-menu.sh",
         "tooltip": false,
         // "exec-if": "exit 0",
@@ -12,23 +12,20 @@
             "shutdown": "systemctl poweroff",
             "restart": "systemctl reboot",
             "logout": "loginctl terminate-user $USER",
-
             // Power Profiles
             "performance": "powerprofilesctl set performance",
             "balanced": "powerprofilesctl set balanced",
             "power-saver": "powerprofilesctl set power-saver",
-
             // Daemon Scripts
-            "osd": "start-osd.sh",
-            "topbar": "start-top-bar.sh",
-            "notification": "start-notification-daemon.sh",
-            "wallpaper": "start-wallpaper-daemon.sh",
-
+            "osd-daemon": "start-osd.sh",
+            "topbar-daemon": "start-top-bar.sh",
+            "notifications-daemon": "start-notifications-daemon.sh",
+            "wallpaper-daemon": "start-wallpaper-daemon.sh",
+            "app-launcher-daemon": "start-app-launcher-daemon.sh",
             // Theme Actions
             "theme-select": "theme-select.sh",
-            "wallpaper-select": "wall-select.sh", 
+            "wallpaper-select": "wall-select.sh",
             "sddm-theme-select": "theme-select-sddm.sh",
-
             // Scripts Actions
             "app-launcher": "app-launcher.sh 'applications'",
             "clipboard": "app-launcher.sh 'clipboard'",

@@ -1,7 +1,7 @@
 {
     "backlight": {
         "device": "DP-1",
-        "format": "{icon} {percent}%",
+        "format": "{icon} {percent}",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
         "tooltip": false,
         "on-scroll-up": "swayosd-client --brightness raise",

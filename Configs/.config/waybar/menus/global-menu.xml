@@ -53,28 +53,33 @@
     </child>
 
     <child>
-      <object class="GtkMenuItem" id="launcher-scripts">
+      <object class="GtkMenuItem" id="daemon-scripts">
         <property name="label">Daemon Scripts</property>
         <child type="submenu">
           <object class="GtkMenu">
             <child>
-              <object class="GtkMenuItem" id="osd">
+              <object class="GtkMenuItem" id="osd-daemon">
                 <property name="label">OSD</property>
               </object>
             </child>
             <child>
-              <object class="GtkMenuItem" id="topbar">
+              <object class="GtkMenuItem" id="topbar-daemon">
                 <property name="label">Topbar</property>
               </object>
             </child>
             <child>
-              <object class="GtkMenuItem" id="notification">
+              <object class="GtkMenuItem" id="notifications-daemon">
                 <property name="label">Notification</property>
               </object>
             </child>
             <child>
-              <object class="GtkMenuItem" id="wallpaper">
+              <object class="GtkMenuItem" id="wallpaper-daemon">
                 <property name="label">Wallpaper</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="app-launcher-daemon">
+                <property name="label">App Launcher</property>
               </object>
             </child>
           </object>
