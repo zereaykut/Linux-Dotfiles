@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-start-app.sh "swww-daemon"
-swww restore &
+start-app.sh "awww-daemon"
+awww restore &

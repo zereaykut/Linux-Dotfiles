@@ -8,9 +8,12 @@ PACKAGES_AUR=(
 	"wlogout"      # logout menu
 	# "smile"           # emoji picker
 	"ventoy"          # create bootable drives
-	"idescriptor-git" # idevice management tool (for iphone)
 	"vicinae-bin"     # app launcher like raycast
 	# "hyprshot"           # screenshot
 	# "brave-bin"          # browser
 	# "netbird"            # vpn client for homelab
+
+	# IOS
+	"idescriptor-git" # idevice management tool (for iphone)
+	iloader-bin     # sideloading apps on ios (for iphone)
 )

@@ -15,5 +15,11 @@ Places Icons Static Size=22
 [MainWindow]
 MenuBar=Disabled
 
+[Colors:View]
+BackgroundNormal=#00000000
+
+[UiSettings]
+ColorScheme=colors
+
 [PreviewSettings]
 Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs
